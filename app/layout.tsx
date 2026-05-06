@@ -18,7 +18,7 @@ const josefinSans = Josefin_Sans({
 /* ---------------- METADATA ---------------- */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://baystate-website.vercel.app"),
+  metadataBase: new URL("https://dxg-digital.vercel.app/"),
   title: "DXG Digital",
   description: "DXG Digital Website",
   icons: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DXG Digital",
     description: "DXG Digital Website",
-    url: "https://baystate-website.vercel.app/",
+    url: "https://dxg-digital.vercel.app/",
     siteName: "DXG Digital",
     locale: "en_US",
     type: "website",
