@@ -70,14 +70,14 @@ export default function WhyPlannersChooseDXGSection() {
       aria-labelledby="why-dxg-heading"
     >
       {/* Background */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <Image
           src="/images/home/why-dxg/why-dxg-bg.png"
           alt="Why planners choose DXG background"
           fill
           className="object-cover object-bottom"
         />
-      </div>
+      </div> */}
 
       <div className="absolute inset-0 bg-black/70" />
 

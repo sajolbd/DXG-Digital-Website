@@ -16,7 +16,7 @@ export default function SmarterApproachSection() {
     <section className="bg-black py-8 lg:py-16">
       <Container>
         {/* Heading */}
-        <div className="text-center">
+        <div className="text-left sm:text-center">
           <h2 className="text-4xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-6xl">
             A Smarter Approach To{" "}
             <span className="text-primary">Event AV Production</span>

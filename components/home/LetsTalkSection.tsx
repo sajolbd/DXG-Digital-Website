@@ -28,7 +28,7 @@ export default function LetsTalkSection() {
     >
       <Container>
         {/* Heading */}
-        <div className="text-center">
+        <div className="text-left sm:text-center">
           <h2
             id="lets-talk-heading"
             className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl"
@@ -36,7 +36,7 @@ export default function LetsTalkSection() {
             <span className="text-primary">Let’s Talk</span> About Your Event
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-white/75 sm:text-base">
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-white/75 sm:mx-auto sm:text-base">
             Your event deserves an AV partner who’s as invested in the outcome
             as you are. Let’s make sure your plan is built for success — before
             you commit.

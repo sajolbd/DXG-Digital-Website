@@ -36,7 +36,7 @@ export default function HowWeWorkSection() {
     >
       <Container>
         {/* Heading */}
-        <div className="text-center">
+        <div className="text-left sm:text-center">
           <h2
             id="how-we-work-heading"
             className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl"

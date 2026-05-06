@@ -37,10 +37,10 @@ export default function ProblemPlannersSection() {
       <Container>
         {/* Section Heading */}
         <div className="flex items-center gap-4 sm:gap-6">
-          <div className="h-px flex-1 bg-primary/40" />
+          <div className="hidden h-px flex-1 bg-primary/40 sm:block" />
           <h2
             id="problem-planners-heading"
-            className="shrink-0 text-center text-sm font-bold uppercase tracking-wide text-white sm:text-base"
+            className="shrink-0 text-left text-sm font-bold uppercase tracking-wide text-white sm:text-center sm:text-base"
           >
             <span className="text-primary">The Problem</span> Most Planners
             Face:
