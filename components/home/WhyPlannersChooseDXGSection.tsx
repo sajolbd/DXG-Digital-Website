@@ -66,7 +66,7 @@ const cards = [
 export default function WhyPlannersChooseDXGSection() {
   return (
     <section
-      className="relative overflow-hidden bg-black py-20 lg:py-28"
+      className="relative overflow-hidden bg-black py-8 lg:py-16"
       aria-labelledby="why-dxg-heading"
     >
       {/* Background */}
