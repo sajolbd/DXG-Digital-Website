@@ -7,6 +7,7 @@ import {
   UserRoundCheck,
   type LucideIcon,
 } from "lucide-react";
+import TypingTitle from "components/layout/TypingTitle";
 
 const highlights = [
   {
@@ -86,13 +87,14 @@ export default function WhyPlannersChooseDXGSection() {
           <div className="grid gap-12 xl:grid-cols-[1.05fr_1fr] xl:gap-14">
             {/* Left Content */}
             <div>
-              <h2
+              <TypingTitle
+                as="h2"
                 id="why-dxg-heading"
                 className="max-w-xl text-4xl font-black uppercase leading-[0.95] text-white sm:text-5xl lg:text-6xl"
               >
                 Why Planners <br />
                 Choose <span className="text-primary">DXG</span>
-              </h2>
+              </TypingTitle>
 
               <div className="mt-8 border-l-2 border-primary pl-5">
                 <p className="max-w-lg text-base italic leading-8 text-white/90 sm:text-lg">
@@ -103,9 +105,12 @@ export default function WhyPlannersChooseDXGSection() {
               </div>
 
               <div className="mt-10 flex items-center gap-4">
-                <h3 className="shrink-0 text-lg font-bold uppercase leading-tight text-primary sm:text-xl">
+                <TypingTitle
+                  as="h3"
+                  className="shrink-0 text-lg font-bold uppercase leading-tight text-primary sm:text-xl"
+                >
                   What Sets DXG Apart In <br /> Real-World Execution
-                </h3>
+                </TypingTitle>
                 <div className="h-px w-full bg-primary/40" />
               </div>
 
@@ -139,9 +144,12 @@ export default function WhyPlannersChooseDXGSection() {
                       </div>
 
                       <div>
-                        <h4 className="text-base font-bold uppercase leading-7 text-white sm:text-lg">
+                        <TypingTitle
+                          as="h4"
+                          className="text-base font-bold uppercase leading-7 text-white sm:text-lg"
+                        >
                           {item.title}
-                        </h4>
+                        </TypingTitle>
                         <p className="mt-1 text-sm leading-7 text-white/70 sm:text-base">
                           {item.desc}
                         </p>
@@ -179,10 +187,13 @@ export default function WhyPlannersChooseDXGSection() {
                       <item.Icon size={32} strokeWidth={2.2} />
                     </div>
 
-                    <h3 className="mt-10 text-2xl font-black uppercase leading-none text-white sm:text-3xl">
+                    <TypingTitle
+                      as="h3"
+                      className="mt-10 text-2xl font-black uppercase leading-none text-white sm:text-3xl"
+                    >
                       {item.title.split(" ")[0]} <br />
                       {item.title.split(" ").slice(1).join(" ")}
-                    </h3>
+                    </TypingTitle>
 
                     <p className="mt-4 text-xs font-medium leading-6 text-white/90 sm:text-sm">
                       {item.desc}

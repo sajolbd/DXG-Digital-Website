@@ -93,11 +93,69 @@ textarea {
   animation-play-state: paused;
 }
 
+.typing-title {
+  display: block;
+}
+
+.typing-title__content {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  vertical-align: top;
+  clip-path: inset(0 100% 0 0);
+}
+
+.typing-title.is-visible .typing-title__content {
+  animation: title-typing 1200ms steps(28, end) forwards;
+}
+
+.typing-title.is-visible .typing-title__content::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 0.08em;
+  background: currentColor;
+  vertical-align: -0.08em;
+  animation: title-caret 800ms steps(1, end) infinite;
+}
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes title-typing {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes title-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-title__content {
+    clip-path: none;
+  }
+
+  .typing-title.is-visible .typing-title__content {
+    animation: none;
+  }
+
+  .typing-title.is-visible .typing-title__content::after {
+    display: none;
   }
 }

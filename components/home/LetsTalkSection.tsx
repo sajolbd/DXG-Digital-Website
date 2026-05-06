@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 const actions = [
   {
@@ -29,12 +30,13 @@ export default function LetsTalkSection() {
       <Container>
         {/* Heading */}
         <div className="text-left sm:text-center">
-          <h2
+          <TypingTitle
+            as="h2"
             id="lets-talk-heading"
             className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl"
           >
             <span className="text-primary">Let’s Talk</span> About Your Event
-          </h2>
+          </TypingTitle>
 
           <p className="mt-4 max-w-3xl text-sm leading-7 text-white/75 sm:mx-auto sm:text-base">
             Your event deserves an AV partner who’s as invested in the outcome
@@ -80,9 +82,12 @@ export default function LetsTalkSection() {
                 />
               </div>
 
-              <h3 className="mt-6 text-lg font-bold uppercase text-primary">
+              <TypingTitle
+                as="h3"
+                className="mt-6 text-lg font-bold uppercase text-primary"
+              >
                 {item.title}
-              </h3>
+              </TypingTitle>
 
               <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-white/70">
                 {item.desc}
@@ -108,10 +113,13 @@ export default function LetsTalkSection() {
         <Container>
           <div className="relative z-10 flex flex-col items-start gap-6 py-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <h3 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
+              <TypingTitle
+                as="h3"
+                className="text-2xl font-bold leading-tight text-white sm:text-3xl"
+              >
                 This isn’t a sales call — it’s a working session to help you
                 plan smarter.
-              </h3>
+              </TypingTitle>
             </div>
 
             <div className="flex flex-col items-start gap-3">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
 import { ChevronRight } from "lucide-react";
+import TypingTitle from "components/layout/TypingTitle";
 
 const services = [
   {
@@ -47,13 +48,14 @@ export default function OnePartnerMarqueeSection() {
         {/* Heading */}
         <div className="flex items-center gap-4 sm:gap-6">
           <div className="hidden h-px flex-1 bg-primary/40 sm:block" />
-          <h2
+          <TypingTitle
+            as="h2"
             id="one-partner-heading"
             className="shrink-0 text-left text-sm font-bold uppercase tracking-wide text-white sm:text-center sm:text-base lg:text-2xl"
           >
             One Partner.{" "}
             <span className="text-primary">Every Part of Your Event.</span>
-          </h2>
+          </TypingTitle>
           <div className="h-px flex-1 bg-primary/40" />
         </div>
 
@@ -93,9 +95,12 @@ export default function OnePartnerMarqueeSection() {
                   />
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold uppercase leading-snug text-primary">
+                <TypingTitle
+                  as="h3"
+                  className="mt-6 text-xl font-bold uppercase leading-snug text-primary"
+                >
                   {item.title}
-                </h3>
+                </TypingTitle>
 
                 <p className="mt-4 text-sm leading-7 text-white/75">
                   {item.desc}

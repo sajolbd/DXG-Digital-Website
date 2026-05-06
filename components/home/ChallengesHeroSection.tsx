@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 export default function ChallengesHeroSection() {
   return (
@@ -27,14 +28,15 @@ export default function ChallengesHeroSection() {
       <div className="relative z-10">
         <Container>
           <div className="max-w-4xl">
-            <h2
+            <TypingTitle
+              as="h2"
               id="challenges-heading"
               className="max-w-4xl text-4xl font-black uppercase leading-[1.02] text-white sm:text-5xl lg:text-7xl"
             >
               The Challenges <br />
               Planners Face – And How{" "}
               <span className="text-primary">DXG Solves Them</span>
-            </h2>
+            </TypingTitle>
 
             <p className="mt-8 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
               We partner with planners to deliver seamless, engaging events—so

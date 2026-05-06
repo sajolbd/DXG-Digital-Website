@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
 import { CheckCircle2 } from "lucide-react";
+import TypingTitle from "components/layout/TypingTitle";
 
 const points = [
   "Runs multi-day conferences where every detail works seamlessly — from general sessions to breakouts",
@@ -17,10 +18,13 @@ export default function SmarterApproachSection() {
       <Container>
         {/* Heading */}
         <div className="text-left sm:text-center">
-          <h2 className="text-4xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-6xl">
+          <TypingTitle
+            as="h2"
+            className="text-4xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-6xl"
+          >
             A Smarter Approach To{" "}
             <span className="text-primary">Event AV Production</span>
-          </h2>
+          </TypingTitle>
         </div>
 
         {/* Main Card */}
@@ -28,9 +32,12 @@ export default function SmarterApproachSection() {
           <div className="grid lg:grid-cols-2">
             {/* Left Content */}
             <div className="p-8 sm:p-10 lg:p-12">
-              <h3 className="max-w-xl text-2xl font-bold uppercase leading-snug text-white sm:text-3xl">
+              <TypingTitle
+                as="h3"
+                className="max-w-xl text-2xl font-bold uppercase leading-snug text-white sm:text-3xl"
+              >
                 Designed For Planners Who Expect More From Event Production
-              </h3>
+              </TypingTitle>
 
               <p className="mt-6 text-sm leading-7 text-white/80 sm:text-base sm:leading-8">
                 DXG is built for planners who want more control, more support,

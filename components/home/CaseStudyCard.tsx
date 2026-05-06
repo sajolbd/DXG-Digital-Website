@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 type Props = {
   data: any;
@@ -20,10 +21,13 @@ export default function CaseStudyCard({ data }: Props) {
               {data.study}
             </p>
 
-            <h2 className="mt-3 text-5xl font-black uppercase leading-[0.95] text-white lg:text-6xl">
+            <TypingTitle
+              as="h2"
+              className="mt-3 text-5xl font-black uppercase leading-[0.95] text-white lg:text-6xl"
+            >
               {data.title}{" "}
               <span className="text-primary">{data.highlight}</span>
-            </h2>
+            </TypingTitle>
 
             <p className="mt-6 text-base italic leading-8 text-white/75">
               {data.subtitle}
@@ -102,10 +106,13 @@ export default function CaseStudyCard({ data }: Props) {
                   />
                 </div>
 
-                <h3 className="text-2xl font-bold uppercase leading-none text-white">
+                <TypingTitle
+                  as="h3"
+                  className="text-2xl font-bold uppercase leading-none text-white"
+                >
                   {section.title} <br />
                   <span className="text-primary">{section.highlight}</span>
-                </h3>
+                </TypingTitle>
               </div>
 
               {section.list ? (

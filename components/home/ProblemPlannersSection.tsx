@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 const problems = [
   {
@@ -38,13 +39,14 @@ export default function ProblemPlannersSection() {
         {/* Section Heading */}
         <div className="flex items-center gap-4 sm:gap-6">
           <div className="hidden h-px flex-1 bg-primary/40 sm:block" />
-          <h2
+          <TypingTitle
+            as="h2"
             id="problem-planners-heading"
             className="shrink-0 text-left text-sm font-bold uppercase tracking-wide text-white sm:text-center sm:text-base"
           >
             <span className="text-primary">The Problem</span> Most Planners
             Face:
-          </h2>
+          </TypingTitle>
           <div className="h-px flex-1 bg-primary/40" />
         </div>
 
@@ -65,10 +67,13 @@ export default function ProblemPlannersSection() {
                 />
               </div>
 
-              <h3 className="mt-6 text-xl font-bold uppercase leading-snug text-white">
+              <TypingTitle
+                as="h3"
+                className="mt-6 text-xl font-bold uppercase leading-snug text-white"
+              >
                 {item.title}{" "}
                 <span className="text-primary">{item.highlight}</span>
-              </h3>
+              </TypingTitle>
 
               <p className="mt-4 text-sm leading-7 text-white/70">
                 {item.desc}

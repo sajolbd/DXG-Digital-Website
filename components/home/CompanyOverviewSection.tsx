@@ -1,6 +1,7 @@
 import Container from "components/shared/Container";
 import { Users, ClipboardList, ClipboardCheck, Globe } from "lucide-react";
 import Image from "next/image";
+import TypingTitle from "components/layout/TypingTitle";
 
 const features = [
   {
@@ -33,9 +34,12 @@ export default function CompanyOverviewSection() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left */}
           <div>
-            <h2 className="text-4xl font-bold uppercase tracking-wide text-white sm:text-4xl lg:text-5xl">
+            <TypingTitle
+              as="h2"
+              className="text-4xl font-bold uppercase tracking-wide text-white sm:text-4xl lg:text-5xl"
+            >
               Company <span className="text-primary">Overview</span>
-            </h2>
+            </TypingTitle>
 
             <p className="mt-6 max-w-md text-base italic leading-7 text-white/70 sm:text-lg">
               Most planners don’t realize how much better their AV experience
@@ -77,9 +81,12 @@ export default function CompanyOverviewSection() {
                   />
                 </div>
 
-                <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-white">
+                <TypingTitle
+                  as="h3"
+                  className="mt-5 text-sm font-semibold uppercase tracking-wide text-white"
+                >
                   {item.title}
-                </h3>
+                </TypingTitle>
 
                 <p className="mt-3 text-sm leading-6 text-white/70">
                   {item.desc}

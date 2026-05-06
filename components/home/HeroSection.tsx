@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 const stats = [
   {
@@ -72,12 +73,15 @@ export default function HeroSection() {
       <div className="relative z-10 flex min-h-screen items-center py-28">
         <Container>
           <div>
-            <h1 className="max-w-none text-4xl font-black uppercase  text-white sm:text-5xl md:text-6xl xl:text-7xl">
+            <TypingTitle
+              as="h1"
+              className="max-w-none text-4xl font-black uppercase  text-white sm:text-5xl md:text-6xl xl:text-7xl"
+            >
               <span className="leading-relaxed">
                 A Better Production Partner <br />
               </span>{" "}
               To Deliver <span className="text-primary">Your Vision</span>
-            </h1>
+            </TypingTitle>
 
             <div className="mt-12 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
               {/* Left Content */}

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 const workImage = "/images/home/how-we-work/how-we-work.png";
 
@@ -37,12 +38,13 @@ export default function HowWeWorkSection() {
       <Container>
         {/* Heading */}
         <div className="text-left sm:text-center">
-          <h2
+          <TypingTitle
+            as="h2"
             id="how-we-work-heading"
             className="text-4xl font-black uppercase leading-tight text-white sm:text-5xl lg:text-6xl"
           >
             How We <span className="text-primary">Work</span>
-          </h2>
+          </TypingTitle>
         </div>
 
         {/* Main Card */}
@@ -65,19 +67,22 @@ export default function HowWeWorkSection() {
                 DXG Successful Process™ Methodology
               </p>
 
-              <h3 className="mt-4 max-w-xl text-3xl font-bold uppercase leading-tight text-white sm:text-4xl">
+              <TypingTitle
+                as="h3"
+                className="mt-4 max-w-xl text-3xl font-bold uppercase leading-tight text-white sm:text-4xl"
+              >
                 We Bring Structure, Clarity, and{" "}
                 <span className="text-primary">
                   Consistency to Every Event.
                 </span>
-              </h3>
+              </TypingTitle>
 
               <div className="mt-10 grid gap-8 sm:grid-cols-2">
                 {methodology.map((item) => (
                   <div key={item.title}>
-                    <h4 className="text-xl font-bold text-white">
+                    <TypingTitle as="h4" className="text-xl font-bold text-white">
                       {item.title}
-                    </h4>
+                    </TypingTitle>
                     <p className="mt-3 text-sm leading-7 text-white/75">
                       {item.desc}
                     </p>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
 
 export default function AceFounderSection() {
   return (
@@ -27,10 +28,13 @@ export default function AceFounderSection() {
           <div className="grid gap-12 lg:grid-cols-[380px_1fr] lg:gap-16">
             {/* Left */}
             <div className="pt-0 lg:pt-2">
-              <h2 className="max-w-[380px] text-4xl font-black uppercase leading-[0.95] text-white sm:text-4xl lg:text-5xl">
+              <TypingTitle
+                as="h2"
+                className="max-w-[380px] text-4xl font-black uppercase leading-[0.95] text-white sm:text-4xl lg:text-5xl"
+              >
                 Meet The <br /> Founder VS <br />
                 <span className="text-primary">Meet Ace</span>
-              </h2>
+              </TypingTitle>
             </div>
 
             {/* Right */}
