@@ -15,10 +15,13 @@ const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
 });
 
+const siteUrl = "https://dxg-digital.vercel.app";
+const ogImageUrl = `${siteUrl}/og-image.png`;
+
 /* ---------------- METADATA ---------------- */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dxg-digital.vercel.app/"),
+  metadataBase: new URL(siteUrl),
   title: "DXG Digital",
   description: "DXG Digital Website",
   icons: {
@@ -29,13 +32,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DXG Digital",
     description: "DXG Digital Website",
-    url: "https://dxg-digital.vercel.app/",
+    url: siteUrl,
     siteName: "DXG Digital",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "DXG Digital Logo",
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DXG Digital",
     description: "DXG Digital Website",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
 
