@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   title: "DXG Digital",
   description: "DXG Digital Website",
   icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "DXG Digital",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "DXG Digital Logo",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DXG Digital",
     description: "DXG Digital Website",
-    images: ["/images/logo.png"],
+    images: ["/og-image.png"],
   },
 };
 
