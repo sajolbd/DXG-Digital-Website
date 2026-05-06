@@ -13,7 +13,7 @@ const points = [
 
 export default function SmarterApproachSection() {
   return (
-    <section className="bg-black py-20 lg:py-28">
+    <section className="bg-black py-8 lg:py-16">
       <Container>
         {/* Heading */}
         <div className="text-center">

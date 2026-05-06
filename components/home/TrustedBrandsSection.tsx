@@ -54,7 +54,7 @@ const brands = [
 
 export default function TrustedBrandsSection() {
   return (
-    <section className="bg-[#f5f5f5] py-16 lg:py-20">
+    <section className="bg-[#ffffff] py-16 lg:py-20">
       <Container>
         <div className="grid grid-cols-2 items-center gap-x-10 gap-y-12 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-14 lg:gap-y-16">
           {brands.map((brand) => (

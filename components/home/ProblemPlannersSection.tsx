@@ -31,7 +31,7 @@ const problems = [
 export default function ProblemPlannersSection() {
   return (
     <section
-      className="bg-black py-20 lg:py-28"
+      className="bg-black py-8 lg:py-16"
       aria-labelledby="problem-planners-heading"
     >
       <Container>

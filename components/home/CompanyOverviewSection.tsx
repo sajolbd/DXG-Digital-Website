@@ -27,7 +27,7 @@ const features = [
 
 export default function CompanyOverviewSection() {
   return (
-    <section className="bg-black py-20 lg:py-28">
+    <section className="bg-black py-8 lg:py-16">
       <Container>
         {/* Top Content */}
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
