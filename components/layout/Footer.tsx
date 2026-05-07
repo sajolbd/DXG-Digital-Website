@@ -49,7 +49,7 @@ export default function Footer() {
                 Join Our Newsletter
               </h2>
 
-              <p className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
+              <p className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-lg">
                 Practical insights for meeting planners — tips, trends, and
                 strategies you can actually use
               </p>
@@ -140,10 +140,18 @@ export default function Footer() {
             </div>
 
             {/* Services */}
-            <div className="relative">
+            <div className="relative min-h-[430px] overflow-hidden py-8">
+              <Image
+                src="/images/footer/footer-bg.png"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/30" />
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
-              <div className="lg:pl-12">
+              <div className="relative lg:pl-12">
                 <h3 className="text-3xl font-black uppercase text-white">
                   Services
                 </h3>
