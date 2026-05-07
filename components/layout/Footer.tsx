@@ -1,212 +1,240 @@
-import Link from "next/link";
-import { MapPin, Phone, Mail, Facebook, Linkedin, Youtube } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
-import Container from "components/shared/Container";
 import Image from "next/image";
+import Link from "next/link";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  type LucideIcon,
+} from "lucide-react";
+import Container from "components/shared/Container";
 
 const services = [
-  "Production Management",
-  "Audio Visual Technology",
-  "Event Platform Services",
-  "Event Experience Design",
-  "Graphics & Animation",
-  "Photography & Videography",
+  "General Sessions",
+  "Breakouts",
+  "Hybrid & Virtual",
+  "Content Capture",
+  "Creative Design",
+  "Meeting Planning Support",
 ];
 
-const whyDXG = [
-  "Our Process",
-  "Our Services",
-  "Our Mission",
-  "Our Experience",
-  "Terms & Conditions",
-  "Privacy Policy",
+const whyDXG = ["Our Process", "Our Services", "Our Mission", "Our Experience"];
+
+const legal = ["Privacy Policy", "Terms Of Use"];
+
+const addressItems: { label: string; Icon: LucideIcon }[] = [
+  { label: "12824 Dupont Circle Tampa, FL 33626", Icon: MapPin },
+  { label: "855.282.9394", Icon: Phone },
+  { label: "Info@dxg.agency", Icon: Mail },
+  { label: "Facebook", Icon: Facebook },
+  { label: "Linked In", Icon: Linkedin },
+  { label: "Instagram", Icon: Instagram },
+  { label: "Twitter", Icon: Twitter },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
-      <Container>
-        {/* Top */}
-        <div className="border-b border-white/20 py-12 lg:py-16">
-          <div className="grid gap-10 lg:grid-cols-3 lg:items-center">
-            {/* Logo */}
-            <div className="flex justify-center lg:justify-start">
-              {/* Logo */}
-              <Link href="/" className="shrink-0" aria-label="DXG Digital Home">
-                <Image
-                  src="/images/logo.png"
-                  alt="DXG Logo"
-                  width={110}
-                  height={63}
-                  priority
-                  className="h-auto w-[110px] object-contain"
-                />
-              </Link>
-            </div>
-
-            {/* Newsletter Text */}
-            <div className="text-center lg:text-left">
-              <h2 className="text-3xl font-bold leading-relaxed tracking-wider lg:text-5xl">
+      {/* Top */}
+      <div className="border-b border-white/10 py-16 lg:py-20">
+        <Container>
+          {/* Newsletter */}
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+            {/* Left */}
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-black text-white sm:text-5xl">
                 Join Our Newsletter
               </h2>
-              <p className="mt-2 text-sm text-white/70 lg:text-base">
-                Receive Marketing Tips &amp; Growth Strategies
+
+              <p className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
+                Practical insights for meeting planners — tips, trends, and
+                strategies you can actually use
               </p>
             </div>
 
-            {/* Newsletter Form */}
-            <div className="w-full">
-              <form className="space-y-4">
-                {/* Input + Button */}
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:overflow-hidden sm:rounded-full sm:bg-white">
-                  {/* Input */}
-                  <div className="flex w-full items-center gap-2 rounded-full bg-white px-4 sm:rounded-none sm:bg-transparent">
-                    <Mail size={18} className="text-black/50" />
-                    <input
-                      type="email"
-                      placeholder="Enter your email address..."
-                      className="h-12 w-full bg-transparent text-sm text-black outline-none"
-                    />
-                  </div>
+            {/* Right */}
+            <div className="w-full max-w-xl">
+              {/* Form */}
+              <form className="flex flex-col gap-4 sm:flex-row">
+                <div className="relative flex-1">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address..."
+                    className="h-14 w-full rounded-full border border-white/10 bg-white px-5 pr-14 text-sm text-black placeholder:text-black/50 focus:border-primary focus:outline-none"
+                  />
 
-                  {/* Button */}
-                  <button
-                    type="submit"
-                    className="btn-slide-primary h-12 w-full rounded-full text-sm font-semibold sm:w-auto sm:rounded-none sm:px-8"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute right-5 top-1/2 h-5 w-5 -translate-y-1/2 text-black/50"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.8}
                   >
-                    Send Us ↗
-                  </button>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21.75 8.25v7.5A2.25 2.25 0 0119.5 18h-15A2.25 2.25 0 012.25 15.75v-7.5m19.5 0A2.25 2.25 0 0019.5 6h-15A2.25 2.25 0 002.25 8.25m19.5 0l-8.69 5.52a2.25 2.25 0 01-2.12 0L2.25 8.25"
+                    />
+                  </svg>
                 </div>
 
-                {/* Checkbox */}
-                <label className="flex items-start gap-2 text-xs text-white/70">
-                  <input
-                    type="checkbox"
-                    className="mt-0.5 h-4 w-4 accent-primary"
-                  />
-                  <span>
-                    I&apos;m accept the{" "}
-                    <Link
-                      href="/terms"
-                      className="underline hover:text-primary"
-                    >
-                      Terms &amp; Conditions
-                    </Link>
-                  </span>
-                </label>
+                <button
+                  type="submit"
+                  className="btn-slide-primary flex h-14 items-center justify-center rounded-full px-8 text-sm font-semibold"
+                >
+                  Send Us
+                </button>
               </form>
+
+              {/* Checkbox */}
+              <label className="mt-5 flex items-start gap-3 text-sm text-white/70">
+                <input
+                  type="checkbox"
+                  className="mt-1 h-4 w-4 accent-primary"
+                />
+
+                <span>
+                  I&apos;m accept the{" "}
+                  <Link href="/terms" className="underline underline-offset-4">
+                    Terms & Conditions
+                  </Link>
+                </span>
+              </label>
             </div>
           </div>
-        </div>
 
-        {/* Middle */}
-        <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14 lg:py-16">
-          {/* About */}
-          <div>
-            <h3 className="text-2xl font-semibold leading-relaxed tracking-wider">
-              About Company
-            </h3>
-            <p className="mt-5 text-sm leading-8 text-white/70">
-              By subscribing to our newsletter, you&apos;re not just signing up
-              for updates — you&apos;re joining a community dedicated to
-              continuous learning and growth. Each edition is carefully curated
-              to bring you the most relevant and impactful information.
+          {/* Footer Grid */}
+          <div className="mt-16 grid gap-12 border-t border-white/10 pt-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_0.8fr] lg:gap-16">
+            {/* Address */}
+            <div>
+              <Link href="/">
+                <Image
+                  src="/images/logo.png"
+                  alt="DXG Digital"
+                  width={150}
+                  height={90}
+                  className="h-auto w-auto"
+                />
+              </Link>
+
+              <h3 className="mt-8 text-3xl font-black uppercase text-white">
+                Address
+              </h3>
+
+              <ul className="mt-7 space-y-4 text-sm text-white/75 sm:text-base">
+                {addressItems.map(({ label, Icon }) => (
+                  <li key={label} className="flex items-start gap-3">
+                    <Icon
+                      size={18}
+                      strokeWidth={2}
+                      className="mt-0.5 shrink-0 text-primary"
+                    />
+                    <span>{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
+
+              <div className="lg:pl-12">
+                <h3 className="text-3xl font-black uppercase text-white">
+                  Services
+                </h3>
+
+                <ul className="mt-7 space-y-4">
+                  {services.map((item) => (
+                    <li key={item}>
+                      <Link
+                        href="/services"
+                        className="text-sm text-primary transition hover:text-white sm:text-base"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Why DXG */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
+
+              <div className="lg:pl-12">
+                <h3 className="text-3xl font-black uppercase text-white">
+                  Why DXG
+                </h3>
+
+                <ul className="mt-7 space-y-4">
+                  {whyDXG.map((item) => (
+                    <li key={item}>
+                      <Link
+                        href="/"
+                        className="text-sm text-white/70 transition hover:text-primary sm:text-base"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Legal */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
+
+              <div className="lg:pl-12">
+                <h3 className="text-3xl font-black uppercase text-white">
+                  Legal
+                </h3>
+
+                <ul className="mt-7 space-y-4">
+                  {legal.map((item) => (
+                    <li key={item}>
+                      <Link
+                        href="/"
+                        className="text-sm text-white/70 transition hover:text-primary sm:text-base"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-center text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+            <p>
+              2026{" "}
+              <span className="text-primary">
+                Digital Xperience Group (DXG)
+              </span>{" "}
+              © All Rights Reserved
+            </p>
+
+            <p>
+              Design & Development{" "}
+              <Link
+                href="https://bayshorecommunication.com"
+                target="_blank"
+                className="text-primary"
+              >
+                Bayshore Communication
+              </Link>
             </p>
           </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-2xl font-semibold leading-relaxed tracking-wider">
-              Service
-            </h3>
-            <ul className="mt-5 space-y-4 text-sm text-white/70">
-              {services.map((item) => (
-                <li key={item}>
-                  <Link href="/" className="transition hover:text-cyan-400">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Why DXG */}
-          <div>
-            <h3 className="text-2xl font-semibold leading-relaxed tracking-wider">
-              Why DXG
-            </h3>
-            <ul className="mt-5 space-y-4 text-sm text-white/70">
-              {whyDXG.map((item) => (
-                <li key={item}>
-                  <Link href="/" className="transition hover:text-cyan-400">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-2xl font-semibold leading-relaxed tracking-wider">
-              Quick links
-            </h3>
-
-            <ul className="mt-5 space-y-4 text-sm text-white/70">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="mt-1 shrink-0" />
-                <span>12824 Dupont Circle Tampa, FL 33626</span>
-              </li>
-
-              <li className="flex items-center gap-3">
-                <Phone size={18} className="shrink-0" />
-                <span>855.282.9394</span>
-              </li>
-
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="shrink-0" />
-                <span>info@dxg.agency</span>
-              </li>
-            </ul>
-
-            <div className="mt-6 flex items-center gap-4">
-              <Link href="/" className="transition hover:text-primary">
-                <Facebook size={20} />
-              </Link>
-              <Link href="/" className="transition hover:text-primary">
-                <Linkedin size={20} />
-              </Link>
-              <Link href="/" className="transition hover:text-primary">
-                <FaXTwitter size={18} />
-              </Link>
-              <Link href="/" className="transition hover:text-primary">
-                <Youtube size={20} />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="flex flex-col gap-4 border-t border-white/20 py-6 text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between">
-          <p className="text-center lg:text-left">
-            {new Date().getFullYear()}{" "}
-            <span className="text-primary">Digital Experience Group (DXG)</span>{" "}
-            © All Rights Reserved
-          </p>
-
-          <p className="text-center lg:text-right">
-            Design &amp; Development{" "}
-            <Link
-              href="https://www.bayshorecommunication.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              Bayshore Communication
-            </Link>
-          </p>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </footer>
   );
 }
