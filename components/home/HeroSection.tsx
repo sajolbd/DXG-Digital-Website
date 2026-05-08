@@ -122,9 +122,9 @@ export default function HeroSection() {
               className="max-w-none text-4xl font-black uppercase  text-white sm:text-5xl md:text-6xl xl:text-7xl"
             >
               <span className="leading-relaxed">
-                A Better Production Partner <br />
+                Your event is too important to hand off to <br />
               </span>{" "}
-              To Deliver <span className="text-primary">Your Vision</span>
+              <span className="text-primary">the wrong AV partner.</span>
             </TypingTitle>
 
             <div className="mt-12 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">

@@ -32,8 +32,7 @@ export default function AceFounderSection() {
                 as="h2"
                 className="max-w-[380px] text-4xl font-black uppercase leading-[0.95] text-white sm:text-4xl lg:text-5xl"
               >
-                Meet The <br /> Founder VS <br />
-                <span className="text-primary">Meet Ace</span>
+                Meet The Founder
               </TypingTitle>
             </div>
 
