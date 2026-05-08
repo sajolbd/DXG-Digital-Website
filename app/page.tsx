@@ -23,7 +23,7 @@ export default function Home() {
       <OnePartnerMarqueeSection />
       <WhyPlannersChooseDXGSection />
       <HowWeWorkSection />
-      <LetsTalkSection />
+      {/* <LetsTalkSection /> */}
       <DifferentCard />
       <TrustedBrandsSection />
     </div>
