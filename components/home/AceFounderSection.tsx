@@ -40,46 +40,49 @@ export default function AceFounderSection() {
             <div className="max-w-3xl lg:ml-auto">
               <div className="space-y-6 text-sm leading-7 text-white/90 sm:text-base sm:leading-8 lg:text-lg">
                 <p>
-                  When you&apos;re planning an event, you&apos;re not just
-                  managing logistics — you&apos;re protecting your reputation.
-                  At DXG, we take that responsibility seriously. Every
-                  production we touch is backed by decades of expertise, a team
-                  that operates with flawless precision, and a standard of
-                  excellence that doesn&apos;t waver when things get
-                  complicated.
+                  Wallace &quot;Ace&quot; Johnson, CTS, founded Digital
+                  Xperience Group on a simple belief: meeting planners deserve
+                  a production partner they never have to worry about.
                 </p>
 
                 <p>
-                  Wallace “Ace” Johnson, CTS, founded Digital Xperience Group on
-                  a simple belief: meeting planners deserve a production partner
-                  they never have to worry about. With 25+ years in live-event
-                  AV production, Ace has built his expertise from both sides of
-                  the table.
+                  With 25+ years in live-event AV production, Ace has built his
+                  expertise from both sides of the table. His background spans
+                  hotel AV operations and independent production, giving him a
+                  rare, insider understanding of how venues think, how
+                  contracts work, and exactly where planners can get caught off
+                  guard. That knowledge works directly in your favor.
                 </p>
 
                 <p>
-                  That knowledge works directly in your favor. His executive
-                  leadership roles across the industry&apos;s top companies, his
-                  CTS certification, and his tenure on the AVIXA Board of
-                  Directors reflect a career built not just on experience, but
-                  on a genuine commitment to raising the standard of this
-                  industry.
+                  His executive leadership roles across the industry&apos;s top
+                  companies, his CTS certification, and his tenure on the AVIXA
+                  Board of Directors reflect a career built not just on
+                  experience, but on a genuine commitment to raising the
+                  standard of this industry.
                 </p>
 
-                <div className="space-y-5 pt-2">
-                  <p>
-                    Want to stay connected and follow what DXG is working on?
-                    Connect with Ace on LinkedIn
-                  </p>
+                <p>
+                  What his clients say most isn&apos;t about the technology or
+                  the logistics. It&apos;s about how they feel on event day.
+                  Confident. Covered. Calm.
+                </p>
 
+                <p>
+                  That&apos;s what Ace brings to every event, and that&apos;s
+                  what DXG promises every planner who trusts us with their
+                  stage.
+                </p>
+
+                <div className="pt-2">
                   <Link
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/acedxg/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-slide-primary inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold"
                   >
                     <Linkedin size={14} strokeWidth={2.5} />
-                    Ace Johnson
+                    Connect with Ace
                   </Link>
                 </div>
               </div>
