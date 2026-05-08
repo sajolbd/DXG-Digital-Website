@@ -122,7 +122,7 @@ export default function HeroSection() {
               className="max-w-none text-4xl font-black uppercase  text-white sm:text-5xl md:text-6xl xl:text-7xl"
             >
               <span className="leading-relaxed">
-                Your event is too important to hand off to <br />
+                Your event is too important to hand off to
               </span>{" "}
               <span className="text-primary">the wrong AV partner.</span>
             </TypingTitle>
