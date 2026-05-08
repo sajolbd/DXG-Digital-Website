@@ -33,10 +33,10 @@ const heroSlides = [
     src: "/images/home/why-dxg/bg.png",
     alt: "Live event production background",
   },
-  {
-    src: "/images/home/ace-founder/founder-bg.png",
-    alt: "DXG production team collaboration",
-  },
+  // {
+  //   src: "/images/home/ace-founder/founder-bg.png",
+  //   alt: "DXG production team collaboration",
+  // },
 ];
 
 function CounterCard({
