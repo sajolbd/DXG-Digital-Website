@@ -129,17 +129,6 @@ textarea {
   animation: title-typing 1200ms steps(28, end) forwards;
 }
 
-.typing-title.is-visible .typing-title__content::after {
-  content: "";
-  display: inline-block;
-  width: 2px;
-  height: 0.9em;
-  margin-left: 0.08em;
-  background: currentColor;
-  vertical-align: -0.08em;
-  animation: title-caret 800ms steps(1, end) infinite;
-}
-
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
@@ -155,17 +144,6 @@ textarea {
   }
 }
 
-@keyframes title-caret {
-  0%,
-  45% {
-    opacity: 1;
-  }
-  46%,
-  100% {
-    opacity: 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .typing-title__content {
     clip-path: none;
@@ -173,9 +151,5 @@ textarea {
 
   .typing-title.is-visible .typing-title__content {
     animation: none;
-  }
-
-  .typing-title.is-visible .typing-title__content::after {
-    display: none;
   }
 }

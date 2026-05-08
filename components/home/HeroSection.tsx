@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
@@ -16,6 +17,25 @@ const stats = [
     number: 25,
     suffix: "+",
     label: "Years Experience",
+  },
+];
+
+const heroSlides = [
+  {
+    src: "/images/home/hero-section/hero-bg.png",
+    alt: "DXG event production setup",
+  },
+  {
+    src: "/images/home/challenges/challenges-bg.png",
+    alt: "Conference production stage lighting",
+  },
+  {
+    src: "/images/home/why-dxg/bg.png",
+    alt: "Live event production background",
+  },
+  {
+    src: "/images/home/ace-founder/founder-bg.png",
+    alt: "DXG production team collaboration",
   },
 ];
 
@@ -53,21 +73,45 @@ function CounterCard({
 }
 
 export default function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* Background Slider */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/home/hero-section/hero-bg.png"
-          alt="DXG Event Production"
-          fill
-          priority
-          className="object-cover"
-        />
+        {heroSlides.map((slide, index) => (
+          <motion.div
+            key={slide.src}
+            className="absolute inset-0"
+            initial={false}
+            animate={{
+              opacity: index === activeSlide ? 1 : 0,
+              scale: index === activeSlide ? 1.04 : 1,
+            }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={index === 0}
+              className="object-cover"
+            />
+          </motion.div>
+        ))}
       </div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/80" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(200,162,84,0.22),transparent_38%)]" />
 
       {/* Content */}
       <div className="relative z-10 flex min-h-screen items-center py-28">
@@ -116,6 +160,22 @@ export default function HeroSection() {
                   We don&apos;t just provide equipment. We help you execute your
                   event the way you actually want it to run.
                 </p>
+
+                <div className="mt-10 flex items-center gap-3">
+                  {heroSlides.map((slide, index) => (
+                    <button
+                      key={slide.src}
+                      type="button"
+                      aria-label={`Show background slide ${index + 1}`}
+                      onClick={() => setActiveSlide(index)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${
+                        index === activeSlide
+                          ? "w-10 bg-primary"
+                          : "w-2.5 bg-white/35 hover:bg-white/60"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
