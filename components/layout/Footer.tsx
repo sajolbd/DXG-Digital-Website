@@ -35,6 +35,25 @@ const addressItems: { label: string; Icon: LucideIcon }[] = [
   { label: "Twitter", Icon: Twitter },
 ];
 
+const footerPanelClass =
+  "group/footer-panel relative min-h-[430px] overflow-hidden p-8";
+
+function FooterHoverBg() {
+  return (
+    <>
+      <Image
+        src="/images/footer/footer-bg.png"
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 25vw, 50vw"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-0 transition duration-500 group-hover/footer-panel:opacity-100"
+      />
+      <div className="absolute inset-0 bg-black/35 opacity-0 transition duration-500 group-hover/footer-panel:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/60 opacity-0 transition duration-500 group-hover/footer-panel:opacity-100" />
+    </>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
@@ -108,50 +127,47 @@ export default function Footer() {
           </div>
 
           {/* Footer Grid */}
-          <div className="mt-16 grid gap-12 border-t border-white/10 pt-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_0.8fr] lg:gap-16">
+          <div className="mt-16 grid items-stretch gap-6 border-t border-white/10 pt-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_0.8fr] lg:gap-0">
             {/* Address */}
-            <div>
-              <Link href="/">
-                <Image
-                  src="/images/logo.png"
-                  alt="DXG Digital"
-                  width={150}
-                  height={90}
-                  className="h-auto w-auto"
-                />
-              </Link>
+            <div className={footerPanelClass}>
+              <FooterHoverBg />
 
-              <h3 className="mt-8 text-3xl font-black uppercase text-white">
-                Address
-              </h3>
+              <div className="relative z-10">
+                <Link href="/">
+                  <Image
+                    src="/images/logo.png"
+                    alt="DXG Digital"
+                    width={150}
+                    height={90}
+                    className="h-auto w-auto"
+                  />
+                </Link>
 
-              <ul className="mt-7 space-y-4 text-sm text-white/75 sm:text-base">
-                {addressItems.map(({ label, Icon }) => (
-                  <li key={label} className="flex items-start gap-3">
-                    <Icon
-                      size={18}
-                      strokeWidth={2}
-                      className="mt-0.5 shrink-0 text-primary"
-                    />
-                    <span>{label}</span>
-                  </li>
-                ))}
-              </ul>
+                <h3 className="mt-8 text-3xl font-black uppercase text-white">
+                  Address
+                </h3>
+
+                <ul className="mt-7 space-y-4 text-sm text-white/75 sm:text-base">
+                  {addressItems.map(({ label, Icon }) => (
+                    <li key={label} className="flex items-start gap-3">
+                      <Icon
+                        size={18}
+                        strokeWidth={2}
+                        className="mt-0.5 shrink-0 text-primary"
+                      />
+                      <span>{label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Services */}
-            <div className="relative min-h-[430px] overflow-hidden py-8">
-              <Image
-                src="/images/footer/footer-bg.png"
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-black/30" />
+            <div className={footerPanelClass}>
+              <FooterHoverBg />
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
-              <div className="relative lg:pl-12">
+              <div className="relative z-10 lg:pl-12">
                 <h3 className="text-3xl font-black uppercase text-white">
                   Services
                 </h3>
@@ -172,10 +188,11 @@ export default function Footer() {
             </div>
 
             {/* Why DXG */}
-            <div className="relative">
+            <div className={footerPanelClass}>
+              <FooterHoverBg />
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
-              <div className="lg:pl-12">
+              <div className="relative z-10 lg:pl-12">
                 <h3 className="text-3xl font-black uppercase text-white">
                   Why DXG
                 </h3>
@@ -196,10 +213,11 @@ export default function Footer() {
             </div>
 
             {/* Legal */}
-            <div className="relative">
+            <div className={footerPanelClass}>
+              <FooterHoverBg />
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
-              <div className="lg:pl-12">
+              <div className="relative z-10 lg:pl-12">
                 <h3 className="text-3xl font-black uppercase text-white">
                   Legal
                 </h3>
