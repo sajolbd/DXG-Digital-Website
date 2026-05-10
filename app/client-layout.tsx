@@ -1,14 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SiteAnimations from "components/layout/SiteAnimations";
 
 export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -18,5 +21,10 @@ export default function ClientLayout({
     });
   }, []);
 
-  return <>{children}</>;
+  return (
+    <main ref={contentRef} className="site-animated-content">
+      {children}
+      <SiteAnimations rootRef={contentRef} />
+    </main>
+  );
 }

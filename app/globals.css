@@ -113,6 +113,26 @@ textarea {
   animation-play-state: paused;
 }
 
+.site-animated-content section {
+  will-change: transform, opacity;
+}
+
+.site-image-reveal {
+  overflow: hidden;
+}
+
+.site-image-reveal > img {
+  transform-origin: center;
+  transition:
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+.site-image-reveal:hover > img {
+  filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.04);
+}
+
 .typing-title {
   display: block;
 }
@@ -145,6 +165,19 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+
+  .site-animated-content section,
+  .site-image-reveal,
+  .site-image-reveal > img {
+    clip-path: none !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+
   .typing-title__content {
     clip-path: none;
   }
