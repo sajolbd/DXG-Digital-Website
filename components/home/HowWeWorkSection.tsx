@@ -1,10 +1,8 @@
 // components/sections/HowWeWorkSection.tsx
 
-import Image from "next/image";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
-
-const workImage = "/images/home/how-we-work/how-we-work.png";
+import ProcessTimelineAnimation from "components/home/ProcessTimelineAnimation";
 
 const methodology = [
   {
@@ -50,16 +48,8 @@ export default function HowWeWorkSection() {
         {/* Main Card */}
         <div className="mt-12 overflow-hidden rounded-[28px] bg-[#151515] lg:mt-16">
           <div className="grid lg:grid-cols-2">
-            {/* Left Image */}
-            <div className="relative min-h-[360px] overflow-hidden bg-[#071a2c] lg:min-h-[560px]">
-              <Image
-                src={workImage}
-                alt="How DXG works"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/30" />
-            </div>
+            {/* Left Animation */}
+            <ProcessTimelineAnimation />
 
             {/* Right Panel */}
             <div className="bg-[#181818] p-8 sm:p-10 lg:p-12">
