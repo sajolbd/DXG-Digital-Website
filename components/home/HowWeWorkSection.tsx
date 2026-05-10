@@ -46,13 +46,15 @@ export default function HowWeWorkSection() {
         </div>
 
         {/* Main Card */}
-        <div className="mt-12 overflow-hidden rounded-[28px] bg-[#151515] lg:mt-16">
-          <div className="grid lg:grid-cols-2">
+        <div className="mt-12 rounded-[28px] bg-[#151515] lg:mt-16">
+          <div className="grid overflow-hidden lg:grid-cols-2">
             {/* Left Animation */}
-            <ProcessTimelineAnimation />
+            <div className="overflow-visible">
+              <ProcessTimelineAnimation />
+            </div>
 
             {/* Right Panel */}
-            <div className="bg-[#181818] p-8 sm:p-10 lg:p-12">
+            <div className="bg-[#181818] p-6 sm:p-8 sm:ml-4 lg:ml-0 lg:p-12">
               <p className="text-xs font-bold uppercase tracking-wide text-white/70">
                 DXG Successful Process™ Methodology
               </p>

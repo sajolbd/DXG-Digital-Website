@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Container from "components/shared/Container";
@@ -10,43 +10,38 @@ import Image from "next/image";
 
 const navItems = [
   { label: "Home", target: "home", path: "/" },
-  { label: "Who We Are", target: "who-we-are", path: "/who-we-are" },
-  { label: "Services", target: "services", path: "/services" },
-  { label: "Portfolio", target: "portfolio", path: "/portfolio" },
+  { label: "Our Process", target: "our-process", path: "/our-process" },
+  {
+    label: "Problems We Solve",
+    target: "problems-we-solve",
+    path: "/problems-we-solve",
+  },
+  {
+    label: "Experiences We've Created",
+    target: "experiences-created",
+    path: "/experiences-created",
+  },
   { label: "The DXG Difference", target: "difference", path: "/difference" },
-  { label: "Our Blog", target: "blog", path: "/blog" },
+  { label: "Planner Insight Blog", target: "blog", path: "/planner-insight-blog" },
   { label: "Contact Us", target: "contact", path: "/contact" },
 ];
 
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTarget, setActiveTarget] = useState("home");
   const [hoveredTarget, setHoveredTarget] = useState<string | null>(null);
 
+  useEffect(() => {
+    const currentItem = navItems.find((item) => item.path === pathname);
+    setActiveTarget(currentItem?.target ?? "home");
+  }, [pathname]);
+
   const handleNavClick = (target: string, path: string) => {
     setActiveTarget(target);
     setMobileMenuOpen(false);
-
-    if (target === "home") {
-      router.push("/");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    const section = document.getElementById(target);
-
-    if (!section) {
-      router.push(path);
-      return;
-    }
-
-    window.history.pushState(null, "", path);
-
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    router.push(path);
   };
 
   const currentDesktopUnderline = hoveredTarget || activeTarget;
@@ -68,7 +63,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-3 xl:flex 2xl:gap-6">
             {navItems.map((item) => {
               const active = activeTarget === item.target;
               const showUnderline = currentDesktopUnderline === item.target;
@@ -80,7 +75,7 @@ export default function Header() {
                   onClick={() => handleNavClick(item.target, item.path)}
                   onMouseEnter={() => setHoveredTarget(item.target)}
                   onMouseLeave={() => setHoveredTarget(null)}
-                  className={`relative py-2 text-sm font-medium transition-colors duration-300 hover:text-primary ${
+                  className={`relative whitespace-nowrap py-2 text-xs font-medium transition-colors duration-300 hover:text-primary 2xl:text-sm ${
                     active || showUnderline ? "text-primary" : "text-white"
                   }`}
                 >
@@ -102,7 +97,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <button
               type="button"
               onClick={() => handleNavClick("proposal", "/proposal")}
@@ -115,7 +110,7 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center justify-center text-white lg:hidden"
+            className="flex items-center justify-center text-white xl:hidden"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -125,8 +120,8 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`overflow-hidden border-t border-white/10 bg-black/95 transition-all duration-300 lg:hidden ${
-          mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t border-white/10 bg-black/95 transition-all duration-300 xl:hidden ${
+          mobileMenuOpen ? "max-h-[560px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <Container>
