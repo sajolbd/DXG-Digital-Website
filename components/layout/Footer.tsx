@@ -36,7 +36,7 @@ const addressItems: { label: string; Icon: LucideIcon }[] = [
 ];
 
 const footerPanelClass =
-  "group/footer-panel relative min-h-[430px] overflow-hidden p-8";
+  "group/footer-panel relative overflow-hidden p-6 sm:p-8 lg:min-h-[430px]";
 
 function FooterHoverBg() {
   return (
