@@ -46,7 +46,7 @@ export default function LetsTalkSection() {
         </div>
 
         {/* Team Image */}
-        <div className="mt-12 lg:mt-14">
+        {/* <div className="mt-12 lg:mt-14">
           <div className="relative mx-auto max-w-5xl overflow-hidden rounded-xl">
             <Image
               src="/images/home/lets-talk/team-photo.png"
@@ -61,35 +61,31 @@ export default function LetsTalkSection() {
             The DXG team — on-site, hands-on, and accountable from load-in to
             wrap
           </p>
-        </div>
+        </div> */}
 
         {/* Action Cards */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-          {actions.map((item, index) => (
-            <article key={item.title} className="relative text-center lg:px-8">
-              {/* Divider */}
-              {index !== 0 && (
-                <div className="absolute left-0 top-1/2 hidden h-28 w-px -translate-y-1/2 bg-primary/20 lg:block" />
-              )}
-
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/50 bg-[#0b2237]">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={26}
-                  height={26}
-                  className="h-6 w-6 object-contain"
-                />
-              </div>
+        <div className="mx-auto mt-10 grid max-w-6xl gap-6 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+          {actions.map((item) => (
+            <article
+              key={item.title}
+              className="relative flex min-h-[230px] flex-col items-center justify-center rounded-xl bg-[#071826] px-8 py-9 text-center"
+            >
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={68}
+                height={68}
+                className="h-12 w-12 object-contain"
+              />
 
               <TypingTitle
                 as="h3"
-                className="mt-6 text-lg font-bold uppercase text-primary"
+                className="mt-6 text-lg font-bold text-white"
               >
                 {item.title}
               </TypingTitle>
 
-              <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-white/70">
+              <p className="mx-auto mt-4 max-w-[260px] text-sm leading-7 text-white/70">
                 {item.desc}
               </p>
             </article>
