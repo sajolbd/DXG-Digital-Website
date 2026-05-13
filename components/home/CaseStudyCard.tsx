@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import { CaseStudy } from "data/caseStudies";
 
 type Props = {
-  data: any;
+  data: CaseStudy;
 };
 
 export default function CaseStudyCard({ data }: Props) {

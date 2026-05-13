@@ -1,6 +1,32 @@
-export const caseStudies = [
+export type CaseStudy = {
+  id: number;
+  slug: string;
+  study: string;
+  title: string;
+  highlight: string;
+  subtitle: string;
+  quote: string;
+  quoteAuthor: string;
+  image: string;
+  background: string;
+  stats: {
+    icon: string;
+    label: string;
+    value: string;
+  }[];
+  sections: {
+    icon: string;
+    title: string;
+    highlight: string;
+    content?: string;
+    list?: string[];
+  }[];
+};
+
+export const caseStudies: CaseStudy[] = [
   {
     id: 1,
+    slug: "association-event-new-orleans",
     study: "Case Study #1",
     title: "Association",
     highlight: "Event",
@@ -65,6 +91,7 @@ export const caseStudies = [
 
   {
     id: 2,
+    slug: "corporate-event-orlando",
     study: "Case Study #2",
     title: "Corporate",
     highlight: "Event",
@@ -128,6 +155,7 @@ export const caseStudies = [
 
   {
     id: 3,
+    slug: "association-event-savannah",
     study: "Case Study #3",
     title: "Association",
     highlight: "Event",
@@ -190,3 +218,7 @@ export const caseStudies = [
     ],
   },
 ];
+
+export function getCaseStudy(slug: string) {
+  return caseStudies.find((study) => study.slug === slug);
+}
