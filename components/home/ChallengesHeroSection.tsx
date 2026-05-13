@@ -21,8 +21,8 @@ export default function ChallengesHeroSection() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/40" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Content */}
       <div className="relative z-10">

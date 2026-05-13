@@ -22,7 +22,11 @@ const navItems = [
     path: "/experiences-created",
   },
   { label: "The DXG Difference", target: "difference", path: "/difference" },
-  { label: "Planner Insight Blog", target: "blog", path: "/planner-insight-blog" },
+  {
+    label: "Planner Insight Blog",
+    target: "blog",
+    path: "/planner-insight-blog",
+  },
   { label: "Contact Us", target: "contact", path: "/contact" },
 ];
 
@@ -34,8 +38,30 @@ export default function Header() {
   const [hoveredTarget, setHoveredTarget] = useState<string | null>(null);
 
   useEffect(() => {
+    // Check for exact path match first
     const currentItem = navItems.find((item) => item.path === pathname);
-    setActiveTarget(currentItem?.target ?? "home");
+
+    // If no exact match, check if pathname contains any of the target paths
+    if (!currentItem) {
+      // Check if we're on a detail/slug page
+      if (pathname.startsWith("/problems-we-solve")) {
+        setActiveTarget("problems-we-solve");
+      } else if (pathname.startsWith("/our-process")) {
+        setActiveTarget("our-process");
+      } else if (pathname.startsWith("/experiences-created")) {
+        setActiveTarget("experiences-created");
+      } else if (pathname.startsWith("/difference")) {
+        setActiveTarget("difference");
+      } else if (pathname.startsWith("/planner-insight-blog")) {
+        setActiveTarget("blog");
+      } else if (pathname.startsWith("/contact")) {
+        setActiveTarget("contact");
+      } else {
+        setActiveTarget("home");
+      }
+    } else {
+      setActiveTarget(currentItem.target);
+    }
   }, [pathname]);
 
   const handleNavClick = (target: string, path: string) => {

@@ -5,11 +5,16 @@ import Container from "components/shared/Container";
 type PageBannerProps = {
   title: string;
   backgroundImage: string;
+  breadcrumbParent?: {
+    label: string;
+    path: string;
+  };
 };
 
 export default function PageBanner({
   title,
   backgroundImage,
+  breadcrumbParent,
 }: PageBannerProps) {
   return (
     <section className="relative isolate min-h-[360px] overflow-hidden pb-20 pt-36 sm:min-h-[400px] sm:pb-24 sm:pt-40 lg:min-h-[460px] lg:pb-28 lg:pt-44">
@@ -26,9 +31,9 @@ export default function PageBanner({
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/75" />
-      <div className="absolute inset-x-0 top-0 h-28 bg-black/25" />
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/50" />
+      <div className="absolute inset-x-0 top-0 h-28 bg-black/10" />
 
       {/* Content */}
       <div className="relative z-10">
@@ -46,6 +51,19 @@ export default function PageBanner({
               </Link>
 
               <span className="text-white/40">/</span>
+
+              {breadcrumbParent && (
+                <>
+                  <Link
+                    href={breadcrumbParent.path}
+                    className="transition hover:text-primary"
+                  >
+                    {breadcrumbParent.label}
+                  </Link>
+
+                  <span className="text-white/40">/</span>
+                </>
+              )}
 
               <span className="text-primary">{title}</span>
             </div>
