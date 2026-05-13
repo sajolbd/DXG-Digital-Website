@@ -1,3 +1,5 @@
+import ContactFormSection from "components/contact/ContactFormSection";
+import GoogleMapSection from "components/contact/GoogleMapSection";
 import PageBanner from "components/shared/PageBanner";
 import React from "react";
 
@@ -8,6 +10,8 @@ const page = () => {
         title="Contact Us"
         backgroundImage="/images/banners/contact-banner.png"
       />
+      <ContactFormSection />
+      <GoogleMapSection />
     </div>
   );
 };
