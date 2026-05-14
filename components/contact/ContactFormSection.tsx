@@ -24,24 +24,40 @@ const contactItems = [
   {
     Icon: Phone,
     label: "855.282.9394",
+    href: "tel:+18552829394",
   },
   {
     Icon: Mail,
     label: "info@dxg.agency",
+    href: "mailto:info@dxg.agency",
   },
 ] satisfies {
   Icon: LucideIcon;
   label: string;
+  href?: string;
 }[];
 
 const socialItems = [
-  { Icon: Facebook, label: "Facebook" },
-  { Icon: Linkedin, label: "LinkedIn" },
-  { Icon: Instagram, label: "Instagram" },
-  { Icon: X, label: "X" },
+  {
+    Icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/dxg.agency",
+  },
+  { Icon: X, label: "X", href: "https://x.com/dxgagency" },
+  {
+    Icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/dxg-agency",
+  },
+  {
+    Icon: Facebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/dxgagcy/",
+  },
 ] satisfies {
   Icon: LucideIcon;
   label: string;
+  href: string;
 }[];
 
 export default function ContactFormSection() {
@@ -101,27 +117,40 @@ export default function ContactFormSection() {
 
               <div className="mt-8 border-t border-white/10 pt-8">
                 <Reveal kind="list" as="div" className="space-y-5">
-                  {contactItems.map(({ Icon, label }) => (
+                  {contactItems.map(({ Icon, label, href }) => (
                     <div key={label} className="flex items-center gap-4">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-primary bg-[#082033] text-primary">
                         <Icon size={16} strokeWidth={2} />
                       </div>
 
-                      <p className="text-sm leading-6 text-white/90">{label}</p>
+                      {href ? (
+                        <a
+                          href={href}
+                          className="text-sm leading-6 text-white/90 transition hover:text-primary"
+                        >
+                          {label}
+                        </a>
+                      ) : (
+                        <p className="text-sm leading-6 text-white/90">
+                          {label}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </Reveal>
 
                 <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-8">
-                  {socialItems.map(({ Icon, label }) => (
-                    <button
+                  {socialItems.map(({ Icon, label, href }) => (
+                    <a
                       key={label}
-                      type="button"
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={label}
                       className="flex h-8 w-8 items-center justify-center rounded-md border border-primary bg-[#082033] text-primary transition duration-300 hover:bg-primary hover:text-black"
                     >
                       <Icon size={16} strokeWidth={2} />
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>

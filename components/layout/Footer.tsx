@@ -7,7 +7,7 @@ import {
   Mail,
   MapPin,
   Phone,
-  Twitter,
+  X,
   type LucideIcon,
 } from "lucide-react";
 import Container from "components/shared/Container";
@@ -27,14 +27,39 @@ const whyDXG = ["Our Process", "Our Services", "Our Mission", "Our Experience"];
 
 const legal = ["Privacy Policy", "Terms Of Use"];
 
-const addressItems: { label: string; Icon: LucideIcon }[] = [
+const addressItems: {
+  label: string;
+  Icon: LucideIcon;
+  href?: string;
+  external?: boolean;
+}[] = [
   { label: "12824 Dupont Circle Tampa, FL 33626", Icon: MapPin },
-  { label: "855.282.9394", Icon: Phone },
-  { label: "Info@dxg.agency", Icon: Mail },
-  { label: "Facebook", Icon: Facebook },
-  { label: "Linked In", Icon: Linkedin },
-  { label: "Instagram", Icon: Instagram },
-  { label: "Twitter", Icon: Twitter },
+  { label: "855.282.9394", Icon: Phone, href: "tel:+18552829394" },
+  { label: "Info@dxg.agency", Icon: Mail, href: "mailto:info@dxg.agency" },
+  {
+    label: "Instagram",
+    Icon: Instagram,
+    href: "https://www.instagram.com/dxg.agency",
+    external: true,
+  },
+  {
+    label: "X",
+    Icon: X,
+    href: "https://x.com/dxgagency",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    Icon: Linkedin,
+    href: "https://www.linkedin.com/company/dxg-agency",
+    external: true,
+  },
+  {
+    label: "Facebook",
+    Icon: Facebook,
+    href: "https://www.facebook.com/dxgagcy/",
+    external: true,
+  },
 ];
 
 const footerPanelClass =
@@ -162,14 +187,32 @@ export default function Footer() {
                   kind="list"
                   className="mt-7 space-y-4 text-sm text-white/75 sm:text-base"
                 >
-                  {addressItems.map(({ label, Icon }) => (
+                  {addressItems.map(({ label, Icon, href, external }) => (
                     <li key={label} className="flex items-start gap-3">
-                      <Icon
-                        size={18}
-                        strokeWidth={2}
-                        className="mt-0.5 shrink-0 text-primary"
-                      />
-                      <span>{label}</span>
+                      {href ? (
+                        <a
+                          href={href}
+                          target={external ? "_blank" : undefined}
+                          rel={external ? "noopener noreferrer" : undefined}
+                          className="flex items-start gap-3 transition hover:text-primary"
+                        >
+                          <Icon
+                            size={18}
+                            strokeWidth={2}
+                            className="mt-0.5 shrink-0 text-primary"
+                          />
+                          <span>{label}</span>
+                        </a>
+                      ) : (
+                        <>
+                          <Icon
+                            size={18}
+                            strokeWidth={2}
+                            className="mt-0.5 shrink-0 text-primary"
+                          />
+                          <span>{label}</span>
+                        </>
+                      )}
                     </li>
                   ))}
                 </Reveal>

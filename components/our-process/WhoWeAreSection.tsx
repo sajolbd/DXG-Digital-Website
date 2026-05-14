@@ -15,22 +15,22 @@ const videos = [
   {
     id: 1,
     thumbnail: "/images/our-process/who-we-are/img1.png",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtube: "https://www.youtube.com/watch?v=7BEx50pspDA",
   },
   {
     id: 2,
     thumbnail: "/images/our-process/who-we-are/img2.png",
-    youtube: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    youtube: "https://www.youtube.com/watch?v=zSC4VXg2qKk",
   },
   {
     id: 3,
     thumbnail: "/images/our-process/who-we-are/img1.png",
-    youtube: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    youtube: "https://www.youtube.com/watch?v=cs9WrMJwnOA",
   },
   {
     id: 4,
     thumbnail: "/images/our-process/who-we-are/img2.png",
-    youtube: "https://www.youtube.com/watch?v=ScMzIvxBSi4",
+    youtube: "https://www.youtube.com/watch?v=Dq-6_WjdFWA",
   },
 ];
 
