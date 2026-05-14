@@ -184,7 +184,7 @@ export default function Header() {
                     },
                   },
                 }}
-                className="flex flex-col py-6"
+                className="flex flex-col items-center py-6"
               >
                 {navItems.map((item) => {
                   const active = activeTarget === item.target;
@@ -198,7 +198,7 @@ export default function Header() {
                         closed: { opacity: 0, x: 18 },
                       }}
                       transition={{ duration: 0.24, ease: "easeOut" }}
-                      className={`relative border-b border-white/10 py-3 pr-8 text-left text-sm font-medium transition-colors duration-300 hover:text-primary ${
+                      className={`relative flex min-h-12 w-fit max-w-[calc(100%-3rem)] items-center justify-center px-4 py-3 text-center text-sm font-medium transition-colors duration-300 hover:text-primary ${
                         active ? "text-primary" : "text-white"
                       }`}
                       onClick={() => handleNavClick(item.target, item.path)}
@@ -207,7 +207,7 @@ export default function Header() {
                       {active ? (
                         <motion.span
                           layoutId="active-mobile-header-link"
-                          className="absolute right-0 top-1/2 h-8 w-0.5 -translate-y-1/2 rounded-full bg-primary"
+                          className="absolute left-full top-1/2 h-0.5 w-8 -translate-y-1/2 rounded-full bg-primary"
                           transition={{
                             type: "spring",
                             stiffness: 420,

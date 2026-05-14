@@ -60,7 +60,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       {/* Top */}
-      <div className="border-b border-white/10 py-16 lg:py-20">
+      <div className="border-b border-white/10 py-8 sm:py-12 lg:py-20">
         <Container>
           {/* Newsletter */}
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">

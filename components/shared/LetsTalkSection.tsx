@@ -25,7 +25,7 @@ const actions = [
 export default function LetsTalkSection() {
   return (
     <section
-      className="bg-black py-8 lg:py-16"
+      className="bg-black pb-0 pt-8 lg:py-16"
       aria-labelledby="lets-talk-heading"
     >
       <Container>
@@ -103,7 +103,7 @@ export default function LetsTalkSection() {
       </Container>
 
       {/* Bottom CTA Banner */}
-      <div className="relative mt-16 overflow-hidden lg:mt-20">
+      <div className="relative mt-8 overflow-hidden sm:mt-12 lg:mt-20">
         <Reveal kind="image" className="absolute inset-0">
           <Image
             src="/images/home/lets-talk/cta-bg.png"
@@ -116,7 +116,7 @@ export default function LetsTalkSection() {
         <div className="absolute inset-0 bg-black/55" />
 
         <Container>
-          <div className="relative z-10 flex flex-col items-start gap-6 py-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative z-10 flex flex-col items-start gap-6 py-8 sm:py-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <TypingTitle
                 as="h3"
