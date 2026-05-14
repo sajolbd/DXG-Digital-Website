@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const highlights = [
   {
@@ -97,11 +98,14 @@ export default function WhyPlannersChooseDXGSection() {
               </TypingTitle>
 
               <div className="mt-8 border-l-2 border-primary pl-5">
-                <p className="max-w-lg text-base italic leading-8 text-white/90 sm:text-lg">
+                <Reveal
+                  as="p"
+                  className="max-w-lg text-base italic leading-8 text-white/90 sm:text-lg"
+                >
                   We’re not just another AV provider — we operate as a
                   production partner focused on how your event is planned,
                   managed, and executed from start to finish.
-                </p>
+                </Reveal>
               </div>
 
               <div className="mt-10 flex items-center gap-4">
@@ -150,9 +154,12 @@ export default function WhyPlannersChooseDXGSection() {
                         >
                           {item.title}
                         </TypingTitle>
-                        <p className="mt-1 text-sm leading-7 text-white/70 sm:text-base">
+                        <Reveal
+                          as="p"
+                          className="mt-1 text-sm leading-7 text-white/70 sm:text-base"
+                        >
                           {item.desc}
-                        </p>
+                        </Reveal>
                       </div>
                     </article>
                   ))}
@@ -169,14 +176,14 @@ export default function WhyPlannersChooseDXGSection() {
                     index % 2 === 1 ? "sm:translate-y-16" : ""
                   }`}
                 >
-                  <div className="absolute inset-0">
+                  <Reveal kind="image" className="absolute inset-0">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       className="object-cover"
                     />
-                  </div>
+                  </Reveal>
 
                   <div className="absolute inset-0 bg-[#03111e]/65" />
                   <div className="absolute inset-0 bg-gradient-to-b from-[#061b2d]/40 via-[#061b2d]/70 to-[#020914]/95" />
@@ -195,9 +202,12 @@ export default function WhyPlannersChooseDXGSection() {
                       {item.title.split(" ").slice(1).join(" ")}
                     </TypingTitle>
 
-                    <p className="mt-4 text-xs font-medium leading-6 text-white/90 sm:text-sm">
+                    <Reveal
+                      as="p"
+                      className="mt-4 text-xs font-medium leading-6 text-white/90 sm:text-sm"
+                    >
                       {item.desc}
-                    </p>
+                    </Reveal>
                   </div>
                 </article>
               ))}

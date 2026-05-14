@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Container from "components/shared/Container";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 /* =========================
    VIDEO DATA
@@ -92,27 +94,30 @@ export default function WhoWeAreSection() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           {/* Left */}
           <div>
-            <h2 className="text-4xl font-black text-white sm:text-5xl">
+            <TypingTitle
+              as="h2"
+              className="text-4xl font-black text-white sm:text-5xl"
+            >
               Who We Are
-            </h2>
+            </TypingTitle>
 
             <div className="mt-8 space-y-6 text-sm leading-8 text-white/70 sm:text-base">
-              <p>
+              <Reveal as="p">
                 Our diverse team of audiovisual technical producers, directors,
                 project managers, engineers, technicians, and creatives brings a
                 collective wealth of experience to your event.
-              </p>
+              </Reveal>
 
-              <p>
+              <Reveal as="p" delay={0.06}>
                 At DXG, our approach is to intimately understand your
                 event&apos;s objectives and forge a connection between your
                 content and your audience.
-              </p>
+              </Reveal>
 
-              <p>
+              <Reveal as="p" delay={0.12}>
                 We stay at the forefront of technology, harnessing innovative
                 solutions to enhance engagement and streamline production.
-              </p>
+              </Reveal>
             </div>
           </div>
 
@@ -120,11 +125,14 @@ export default function WhoWeAreSection() {
           <div className="border-l border-primary pl-6">
             <div className="text-6xl leading-none text-primary">“</div>
 
-            <p className="mt-4 text-sm italic leading-8 text-white/80 sm:text-base">
+            <Reveal
+              as="p"
+              className="mt-4 text-sm italic leading-8 text-white/80 sm:text-base"
+            >
               Digital Xperience Group Agency (DXG), a pioneering division of
               WJLI Consulting, is a premier partner in transforming events into
               unforgettable experiences.
-            </p>
+            </Reveal>
           </div>
         </div>
       </Container>
@@ -179,13 +187,15 @@ export default function WhoWeAreSection() {
                   aria-label={`Play DXG video ${video.id}`}
                 >
                   {/* Thumbnail */}
-                  <Image
-                    src={video.thumbnail}
-                    alt={`DXG video ${video.id}`}
-                    fill
-                    sizes="(min-width: 1024px) 520px, (min-width: 640px) 420px, 82vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
+                  <Reveal kind="image" className="absolute inset-0">
+                    <Image
+                      src={video.thumbnail}
+                      alt={`DXG video ${video.id}`}
+                      fill
+                      sizes="(min-width: 1024px) 520px, (min-width: 640px) 420px, 82vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </Reveal>
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/20 transition duration-300 group-hover:bg-black/35" />

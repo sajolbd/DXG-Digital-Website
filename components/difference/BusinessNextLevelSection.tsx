@@ -3,6 +3,8 @@
 import Image from "next/image";
 import CountUp from "react-countup";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const stats = [
   {
@@ -87,25 +89,28 @@ export default function BusinessNextLevelSection() {
 
             {/* Right */}
             <div className="max-w-2xl lg:ml-auto">
-              <h2 className="text-4xl font-black uppercase leading-[0.95] text-white sm:text-5xl lg:text-6xl">
+              <TypingTitle
+                as="h2"
+                className="text-4xl font-black uppercase leading-[0.95] text-white sm:text-5xl lg:text-6xl"
+              >
                 Take Your Business <br />
                 To The Next Level
-              </h2>
+              </TypingTitle>
 
               <div className="mt-8 space-y-6 text-sm leading-8 text-white/80 sm:text-base">
-                <p>
+                <Reveal as="p">
                   We ensure an unparalleled fusion of experience, innovation,
                   and dedication. With core teams boasting an average of 20+
                   years in live events, virtual and hybrid corporate events,
                   broadcast, and entertainment, DXG brings a depth of knowledge
                   that is unmatched.
-                </p>
+                </Reveal>
 
-                <p>
+                <Reveal as="p" delay={0.08}>
                   DXG excels in Production Management, Audiovisual Technology,
                   Event Platform Services, Event Experience Design, Graphics &
                   Animation, and Video Production & Photography.
-                </p>
+                </Reveal>
               </div>
             </div>
           </div>

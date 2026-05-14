@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 import {
   Facebook,
   Instagram,
@@ -79,20 +81,26 @@ export default function ContactFormSection() {
         <div className="overflow-hidden rounded-[22px] border border-primary/15 bg-[#071827] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
           <div className="grid gap-10 p-8 sm:p-10 lg:grid-cols-[0.8fr_1.25fr] lg:gap-16 lg:p-12">
             <div>
-              <h2 className="text-3xl font-black uppercase leading-[0.95] text-white sm:text-4xl lg:text-[42px]">
+              <TypingTitle
+                as="h2"
+                className="text-3xl font-black uppercase leading-[0.95] text-white sm:text-4xl lg:text-[42px]"
+              >
                 <span className="text-primary">Let&apos;s Talk</span> About{" "}
                 <br />
                 Your Event
-              </h2>
+              </TypingTitle>
 
-              <p className="mt-6 max-w-[360px] text-sm leading-6 text-white/85">
+              <Reveal
+                as="p"
+                className="mt-6 max-w-[360px] text-sm leading-6 text-white/85"
+              >
                 Your event deserves an AV partner who&apos;s as invested in the
                 outcome as you are. Let&apos;s make sure your plan is built for
                 success - before you commit.
-              </p>
+              </Reveal>
 
               <div className="mt-8 border-t border-white/10 pt-8">
-                <div className="space-y-5">
+                <Reveal kind="list" as="div" className="space-y-5">
                   {contactItems.map(({ Icon, label }) => (
                     <div key={label} className="flex items-center gap-4">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-primary bg-[#082033] text-primary">
@@ -102,7 +110,7 @@ export default function ContactFormSection() {
                       <p className="text-sm leading-6 text-white/90">{label}</p>
                     </div>
                   ))}
-                </div>
+                </Reveal>
 
                 <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-8">
                   {socialItems.map(({ Icon, label }) => (

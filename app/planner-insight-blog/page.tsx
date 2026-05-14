@@ -18,11 +18,17 @@ export default function BlogsPage() {
 
       <section className="bg-black py-8 lg:py-16">
         <Container>
-          {featuredBlog && <BlogCard blog={featuredBlog} featured />}
+          {featuredBlog && (
+            <BlogCard blog={featuredBlog} featured revealDelay={0.05} />
+          )}
 
           <div className="mt-14 grid gap-x-10 gap-y-16 sm:grid-cols-2 xl:grid-cols-3">
-            {otherBlogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
+            {otherBlogs.map((blog, index) => (
+              <BlogCard
+                key={blog.id}
+                blog={blog}
+                revealDelay={Math.min(index * 0.08, 0.24)}
+              />
             ))}
           </div>
           <LetsTalkSection />

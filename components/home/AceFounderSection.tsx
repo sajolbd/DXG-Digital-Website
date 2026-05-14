@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Linkedin } from "lucide-react";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 export default function AceFounderSection() {
   return (
@@ -39,16 +40,16 @@ export default function AceFounderSection() {
             {/* Right */}
             <div className="max-w-4xl lg:ml-auto lg:pt-12">
               <div className="space-y-5 text-sm leading-6 text-white sm:text-base sm:leading-7">
-                <p>
+                <Reveal as="p">
                   When you&apos;re planning an event, you&apos;re not just
                   managing logistics — you&apos;re protecting your reputation.
                   At DXG, we take that responsibility seriously. Every
                   production we touch is backed by decades of expertise, a team
                   that operates with flawless precision, and a standard of
                   excellence that doesn&apos;t waver when things get complicated.
-                </p>
+                </Reveal>
 
-                <p>
+                <Reveal as="p" delay={0.06}>
                   Wallace &quot;Ace&quot; Johnson, CTS, founded Digital
                   Xperience Group on a simple belief: meeting planners deserve
                   a production partner they never have to worry about. With 25+
@@ -57,9 +58,9 @@ export default function AceFounderSection() {
                   operations and independent production — giving him a rare,
                   insider understanding of how venues think, how contracts work,
                   and exactly where planners can get caught off guard.
-                </p>
+                </Reveal>
 
-                <p>
+                <Reveal as="p" delay={0.12}>
                   That knowledge works directly in your favor. His executive
                   leadership roles across the industry&apos;s top companies, his
                   CTS certification, and his tenure on the AVIXA Board of
@@ -70,13 +71,13 @@ export default function AceFounderSection() {
                   event day. Confident. Covered. Calm. That&apos;s what Ace
                   brings to every event — and that&apos;s what DXG promises every
                   planner who trusts us with their stage.
-                </p>
+                </Reveal>
 
-                <p className="pt-2">
+                <Reveal as="p" className="pt-2" delay={0.18}>
                   Want to stay connected and follow what DXG is working on?
                   <br />
                   Connect with Ace on LinkedIn
-                </p>
+                </Reveal>
 
                 <div className="pt-1">
                   <Link

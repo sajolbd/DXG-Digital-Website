@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const problems = [
   {
@@ -57,7 +58,10 @@ export default function ProblemPlannersSection() {
               key={item.title}
               className="rounded-[28px] bg-[#081624] p-8 text-center transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
             >
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-primary/50 bg-[#0b2237]">
+              <Reveal
+                kind="image"
+                className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-primary/50 bg-[#0b2237]"
+              >
                 <Image
                   src={item.icon}
                   alt={item.highlight}
@@ -65,7 +69,7 @@ export default function ProblemPlannersSection() {
                   height={38}
                   className="h-9 w-9 object-contain"
                 />
-              </div>
+              </Reveal>
 
               <TypingTitle
                 as="h3"
@@ -75,9 +79,9 @@ export default function ProblemPlannersSection() {
                 <span className="text-primary">{item.highlight}</span>
               </TypingTitle>
 
-              <p className="mt-4 text-sm leading-7 text-white/70">
+              <Reveal as="p" className="mt-4 text-sm leading-7 text-white/70">
                 {item.desc}
-              </p>
+              </Reveal>
             </article>
           ))}
         </div>

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const stats = [
   {
@@ -142,24 +143,35 @@ export default function HeroSection() {
 
               {/* Right Content */}
               <div className="max-w-xl lg:ml-auto">
-                <p className="text-lg leading-9 text-white/90 sm:text-xl">
+                <Reveal
+                  as="p"
+                  className="text-lg leading-9 text-white/90 sm:text-xl"
+                >
                   We help meeting planners execute multi-day conferences,
                   general sessions, and hybrid events without the limitations,
                   surprises, or stress that often come with traditional AV
                   providers.
-                </p>
+                </Reveal>
 
-                <p className="mt-6 text-base leading-8 text-white/75 sm:text-lg">
+                <Reveal
+                  as="p"
+                  className="mt-6 text-base leading-8 text-white/75 sm:text-lg"
+                  delay={0.08}
+                >
                   Whether you&apos;re navigating in-house AV restrictions,
                   managing complex production needs, or simply looking for a
                   more proactive partner, DXG brings clarity, control, and
                   confidence to your event.
-                </p>
+                </Reveal>
 
-                <p className="mt-8 max-w-lg text-lg font-semibold italic leading-8 text-primary">
+                <Reveal
+                  as="p"
+                  className="mt-8 max-w-lg text-lg font-semibold italic leading-8 text-primary"
+                  delay={0.16}
+                >
                   We don&apos;t just provide equipment. We help you execute your
                   event the way you actually want it to run.
-                </p>
+                </Reveal>
 
                 <div className="mt-10 flex items-center gap-3">
                   {heroSlides.map((slide, index) => (

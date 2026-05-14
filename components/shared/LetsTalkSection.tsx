@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const actions = [
   {
@@ -38,11 +39,14 @@ export default function LetsTalkSection() {
             <span className="text-primary">Let’s Talk</span> About Your Event
           </TypingTitle>
 
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-white/75 sm:mx-auto sm:text-base">
+          <Reveal
+            as="p"
+            className="mt-4 max-w-3xl text-sm leading-7 text-white/75 sm:mx-auto sm:text-base"
+          >
             Your event deserves an AV partner who’s as invested in the outcome
             as you are. Let’s make sure your plan is built for success — before
             you commit.
-          </p>
+          </Reveal>
         </div>
 
         {/* Team Image */}
@@ -70,13 +74,15 @@ export default function LetsTalkSection() {
               key={item.title}
               className="relative flex min-h-[230px] flex-col items-center justify-center rounded-xl bg-[#071826] px-8 py-9 text-center"
             >
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={68}
-                height={68}
-                className="h-12 w-12 object-contain"
-              />
+              <Reveal kind="image">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={68}
+                  height={68}
+                  className="h-12 w-12 object-contain"
+                />
+              </Reveal>
 
               <TypingTitle
                 as="h3"
@@ -85,9 +91,12 @@ export default function LetsTalkSection() {
                 {item.title}
               </TypingTitle>
 
-              <p className="mx-auto mt-4 max-w-[260px] text-sm leading-7 text-white/70">
+              <Reveal
+                as="p"
+                className="mx-auto mt-4 max-w-[260px] text-sm leading-7 text-white/70"
+              >
                 {item.desc}
-              </p>
+              </Reveal>
             </article>
           ))}
         </div>
@@ -95,14 +104,14 @@ export default function LetsTalkSection() {
 
       {/* Bottom CTA Banner */}
       <div className="relative mt-16 overflow-hidden lg:mt-20">
-        <div className="absolute inset-0">
+        <Reveal kind="image" className="absolute inset-0">
           <Image
             src="/images/home/lets-talk/cta-bg.png"
             alt="Schedule a Strategy Call"
             fill
             className="object-cover"
           />
-        </div>
+        </Reveal>
 
         <div className="absolute inset-0 bg-black/55" />
 
@@ -125,10 +134,10 @@ export default function LetsTalkSection() {
               >
                 Schedule a Strategy Call
               </Link>
-              <p className="text-xs leading-6 text-white/75">
+              <Reveal as="p" className="text-xs leading-6 text-white/75">
                 No pressure. No pitch deck. Just a conversation about your
                 event.
-              </p>
+              </Reveal>
             </div>
           </div>
         </Container>

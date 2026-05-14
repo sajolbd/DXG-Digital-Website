@@ -23,7 +23,6 @@ export const blogs: Blog[] = [
       "At DXG, we believe every successful event begins with a dependable run of show strategy.",
       "From technical rehearsals to speaker transitions and cue management, our team ensures every detail aligns perfectly.",
       "When the unexpected happens, preparation becomes the difference between panic and confidence.",
-      "A strong run of show gives production teams, speakers, executives, and planners the same operating language. It keeps decisions clear, reduces last-minute confusion, and gives every stakeholder confidence that the event can move from moment to moment without losing momentum.",
     ],
   },
 
@@ -39,8 +38,6 @@ export const blogs: Blog[] = [
       "Production planning is the foundation of successful live events.",
       "Without structure, timelines and communication can quickly break down.",
       "DXG helps event planners stay proactive instead of reactive.",
-      "The right planning process maps the experience before the first piece of gear arrives on site. It defines room flow, content needs, rehearsal priorities, technical cues, and decision checkpoints so every department understands how their work supports the event outcome.",
-      "This preparation also protects the attendee experience. When production is planned early, presenters feel supported, transitions feel intentional, and the audience sees a polished program instead of the stress behind the scenes.",
     ],
   },
 
@@ -55,9 +52,6 @@ export const blogs: Blog[] = [
     content: [
       "Hybrid events are now a major part of the event industry.",
       "Audience engagement must feel seamless across every platform.",
-      "The challenge is not simply streaming a room to an online audience. A successful hybrid experience considers camera direction, audio clarity, content pacing, audience interaction, and how virtual attendees participate without feeling secondary.",
-      "DXG approaches hybrid events as one connected experience with multiple audience paths. The in-room production, broadcast workflow, platform setup, and post-event content all need to support the same communication goal.",
-      "When those details are planned together, hybrid events can extend reach without diluting impact.",
     ],
   },
 
@@ -72,9 +66,6 @@ export const blogs: Blog[] = [
     content: [
       "Technology is shaping the future of event experiences.",
       "AI, immersive visuals, and audience interaction tools continue evolving.",
-      "For planners, the most valuable technology is not always the newest tool. It is the technology that makes the event easier to understand, easier to run, and more memorable for attendees.",
-      "Large-format visuals, flexible LED environments, live content capture, smarter streaming workflows, and real-time audience feedback are all changing how organizations communicate from the stage.",
-      "The key is choosing technology around the event objective. When tools are selected with a clear strategy, they support the message instead of distracting from it.",
     ],
   },
 ];

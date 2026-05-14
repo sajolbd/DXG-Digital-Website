@@ -4,6 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 import Container from "components/shared/Container";
 import { caseStudies } from "data/caseStudies";
 import LetsTalkSection from "components/shared/LetsTalkSection";
+import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 export default function ExperiencesCreatedCardSection() {
   return (
@@ -33,27 +35,41 @@ export default function ExperiencesCreatedCardSection() {
                     {study.study}
                   </p>
 
-                  <h3 className="mt-3 text-4xl font-black uppercase leading-[0.88] text-white sm:text-5xl lg:text-6xl">
+                  <TypingTitle
+                    as="h3"
+                    className="mt-3 text-4xl font-black uppercase leading-[0.88] text-white sm:text-5xl lg:text-6xl"
+                  >
                     {study.title}
                     <span className="block text-primary">
                       {study.highlight}
                     </span>
-                  </h3>
+                  </TypingTitle>
 
-                  <p className="mt-5 text-sm italic leading-6 text-white/85 sm:text-base">
+                  <Reveal
+                    as="p"
+                    className="mt-5 text-sm italic leading-6 text-white/85 sm:text-base"
+                  >
                     {study.subtitle}
-                  </p>
+                  </Reveal>
 
                   <div className="mt-auto pt-8">
                     <div className="text-6xl leading-none text-primary">
                       &ldquo;
                     </div>
-                    <p className="mt-2 max-w-[320px] text-sm italic leading-6 text-white/90">
+                    <Reveal
+                      as="p"
+                      className="mt-2 max-w-[320px] text-sm italic leading-6 text-white/90"
+                      delay={0.06}
+                    >
                       {study.quote}
-                    </p>
-                    <p className="mt-4 max-w-[260px] text-xs font-semibold italic leading-5 text-primary">
+                    </Reveal>
+                    <Reveal
+                      as="p"
+                      className="mt-4 max-w-[260px] text-xs font-semibold italic leading-5 text-primary"
+                      delay={0.12}
+                    >
                       {study.quoteAuthor}
-                    </p>
+                    </Reveal>
 
                     <span className="btn-slide-primary mt-7 inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-bold">
                       Explore Details
@@ -65,7 +81,10 @@ export default function ExperiencesCreatedCardSection() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[260px] overflow-hidden rounded-[14px] sm:min-h-[340px] lg:min-h-[430px]">
+                <Reveal
+                  kind="image"
+                  className="relative min-h-[260px] overflow-hidden rounded-[14px] sm:min-h-[340px] lg:min-h-[430px]"
+                >
                   <Image
                     src={study.image}
                     alt={`${study.title} ${study.highlight}`}
@@ -74,7 +93,7 @@ export default function ExperiencesCreatedCardSection() {
                     className="object-cover transition duration-[900ms] ease-out group-hover:scale-[1.06]"
                   />
                   <div className="absolute inset-0 bg-black/10 transition duration-700 ease-out group-hover:bg-transparent" />
-                </div>
+                </Reveal>
               </article>
             </Link>
           ))}

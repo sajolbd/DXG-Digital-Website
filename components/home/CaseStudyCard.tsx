@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 import { CaseStudy } from "data/caseStudies";
 
 type Props = {
@@ -18,9 +19,12 @@ export default function CaseStudyCard({ data }: Props) {
         <div className="grid gap-10 xl:grid-cols-[460px_1fr] xl:gap-16">
           {/* Left */}
           <div>
-            <p className="text-sm font-bold uppercase tracking-wide text-primary">
+            <Reveal
+              as="p"
+              className="text-sm font-bold uppercase tracking-wide text-primary"
+            >
               {data.study}
-            </p>
+            </Reveal>
 
             <TypingTitle
               as="h2"
@@ -30,25 +34,38 @@ export default function CaseStudyCard({ data }: Props) {
               <span className="text-primary">{data.highlight}</span>
             </TypingTitle>
 
-            <p className="mt-6 text-base italic leading-8 text-white/75">
+            <Reveal
+              as="p"
+              className="mt-6 text-base italic leading-8 text-white/75"
+            >
               {data.subtitle}
-            </p>
+            </Reveal>
 
             <div className="mt-10 border-l border-primary pl-5">
               <div className="text-6xl leading-none text-primary">“</div>
 
-              <p className="mt-2 text-lg italic leading-8 text-white">
+              <Reveal
+                as="p"
+                className="mt-2 text-lg italic leading-8 text-white"
+              >
                 {data.quote}
-              </p>
+              </Reveal>
 
-              <p className="mt-4 text-sm font-semibold text-primary">
+              <Reveal
+                as="p"
+                className="mt-4 text-sm font-semibold text-primary"
+                delay={0.08}
+              >
                 {data.quoteAuthor}
-              </p>
+              </Reveal>
             </div>
           </div>
 
           {/* Image */}
-          <div className="ml-auto w-full max-w-[880px] overflow-hidden rounded-[28px]">
+          <Reveal
+            kind="image"
+            className="ml-auto w-full max-w-[880px] overflow-hidden rounded-[28px]"
+          >
             <Image
               src={data.image}
               alt={data.title}
@@ -56,7 +73,7 @@ export default function CaseStudyCard({ data }: Props) {
               height={760}
               className="h-full w-full object-cover"
             />
-          </div>
+          </Reveal>
         </div>
 
         {/* Stats */}
@@ -117,7 +134,7 @@ export default function CaseStudyCard({ data }: Props) {
               </div>
 
               {section.list ? (
-                <ul className="space-y-5">
+                <Reveal kind="list" className="space-y-5">
                   {section.list.map((item: string) => (
                     <li
                       key={item}
@@ -127,11 +144,14 @@ export default function CaseStudyCard({ data }: Props) {
                       <span>{item}</span>
                     </li>
                   ))}
-                </ul>
+                </Reveal>
               ) : (
-                <p className="text-sm leading-8 text-white/75 sm:text-base">
+                <Reveal
+                  as="p"
+                  className="text-sm leading-8 text-white/75 sm:text-base"
+                >
                   {section.content}
-                </p>
+                </Reveal>
               )}
             </div>
           ))}

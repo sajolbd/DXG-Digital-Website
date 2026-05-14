@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 type PageBannerProps = {
   title: string;
@@ -19,16 +21,16 @@ export default function PageBanner({
   return (
     <section className="relative isolate min-h-[360px] overflow-hidden pb-20 pt-36 sm:min-h-[400px] sm:pb-24 sm:pt-40 lg:min-h-[460px] lg:pb-28 lg:pt-44">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <Reveal kind="image" className="absolute inset-0">
         <Image
           src={backgroundImage}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="dxg-banner-media object-cover object-center"
         />
-      </div>
+      </Reveal>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
@@ -40,32 +42,42 @@ export default function PageBanner({
         <Container>
           <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
             {/* Title */}
-            <h1 className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+            <TypingTitle
+              as="h1"
+              className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl"
+            >
               {title}
-            </h1>
+            </TypingTitle>
 
             {/* Breadcrumb */}
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-white/80">
-              <Link href="/" className="transition hover:text-primary">
-                Home
-              </Link>
+              <Reveal
+                as="span"
+                className="inline-flex flex-wrap items-center justify-center gap-3"
+                delay={0.18}
+                duration={0.75}
+              >
+                <Link href="/" className="transition hover:text-primary">
+                  Home
+                </Link>
 
-              <span className="text-white/40">/</span>
+                <span className="text-white/40">/</span>
 
-              {breadcrumbParent && (
-                <>
-                  <Link
-                    href={breadcrumbParent.path}
-                    className="transition hover:text-primary"
-                  >
-                    {breadcrumbParent.label}
-                  </Link>
+                {breadcrumbParent && (
+                  <>
+                    <Link
+                      href={breadcrumbParent.path}
+                      className="transition hover:text-primary"
+                    >
+                      {breadcrumbParent.label}
+                    </Link>
 
-                  <span className="text-white/40">/</span>
-                </>
-              )}
+                    <span className="text-white/40">/</span>
+                  </>
+                )}
 
-              <span className="text-primary">{title}</span>
+                <span className="text-primary">{title}</span>
+              </Reveal>
             </div>
           </div>
         </Container>

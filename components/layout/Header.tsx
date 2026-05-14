@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Container from "components/shared/Container";
 import Image from "next/image";
 
@@ -127,7 +127,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => handleNavClick("proposal", "/proposal")}
-              className="btn-slide-primary inline-flex items-center justify-center px-6 py-3 text-sm font-semibold"
+              className="btn-slide-primary capsule-button inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
             >
               Request for Proposal
             </button>
@@ -136,60 +136,106 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center justify-center text-white xl:hidden"
+            className="flex h-10 w-10 items-center justify-center text-white xl:hidden"
             aria-label="Toggle Menu"
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={mobileMenuOpen ? "close" : "open"}
+                initial={{ opacity: 0, rotate: -45, scale: 0.8 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 45, scale: 0.8 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+              >
+                {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </motion.span>
+            </AnimatePresence>
           </button>
         </div>
       </Container>
 
       {/* Mobile Menu */}
-      <div
-        className={`overflow-hidden border-t border-white/10 bg-black/95 transition-all duration-300 xl:hidden ${
-          mobileMenuOpen ? "max-h-[560px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <Container>
-          <nav className="flex flex-col py-6">
-            {navItems.map((item) => {
-              const active = activeTarget === item.target;
+      <AnimatePresence>
+        {mobileMenuOpen ? (
+          <motion.div
+            initial={{ height: 0, opacity: 0, y: -10 }}
+            animate={{ height: "auto", opacity: 1, y: 0 }}
+            exit={{ height: 0, opacity: 0, y: -10 }}
+            transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-white/10 bg-black/95 xl:hidden"
+          >
+            <Container>
+              <motion.nav
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={{
+                  open: {
+                    transition: {
+                      staggerChildren: 0.045,
+                      delayChildren: 0.08,
+                    },
+                  },
+                  closed: {
+                    transition: {
+                      staggerChildren: 0.025,
+                      staggerDirection: -1,
+                    },
+                  },
+                }}
+                className="flex flex-col py-6"
+              >
+                {navItems.map((item) => {
+                  const active = activeTarget === item.target;
 
-              return (
-                <button
-                  key={item.label}
-                  type="button"
-                  className={`relative border-b border-white/10 py-3 text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                    active ? "text-primary" : "text-white"
-                  }`}
-                  onClick={() => handleNavClick(item.target, item.path)}
-                >
-                  {item.label}
-                  {active ? (
-                    <motion.span
-                      layoutId="active-mobile-header-link"
-                      className="absolute bottom-0 left-0 h-0.5 w-12 rounded-full bg-primary"
-                      transition={{
-                        type: "spring",
-                        stiffness: 420,
-                        damping: 32,
+                  return (
+                    <motion.button
+                      key={item.label}
+                      type="button"
+                      variants={{
+                        open: { opacity: 1, x: 0 },
+                        closed: { opacity: 0, x: 18 },
                       }}
-                    />
-                  ) : null}
-                </button>
-              );
-            })}
+                      transition={{ duration: 0.24, ease: "easeOut" }}
+                      className={`relative border-b border-white/10 py-3 pr-8 text-left text-sm font-medium transition-colors duration-300 hover:text-primary ${
+                        active ? "text-primary" : "text-white"
+                      }`}
+                      onClick={() => handleNavClick(item.target, item.path)}
+                    >
+                      {item.label}
+                      {active ? (
+                        <motion.span
+                          layoutId="active-mobile-header-link"
+                          className="absolute right-0 top-1/2 h-8 w-0.5 -translate-y-1/2 rounded-full bg-primary"
+                          transition={{
+                            type: "spring",
+                            stiffness: 420,
+                            damping: 32,
+                          }}
+                        />
+                      ) : null}
+                    </motion.button>
+                  );
+                })}
 
-            <button
-              type="button"
-              className="btn-slide-primary mt-5 inline-flex items-center justify-center px-5 py-3 text-sm font-semibold"
-              onClick={() => handleNavClick("proposal", "/proposal")}
-            >
-              Request for Proposal
-            </button>
-          </nav>
-        </Container>
-      </div>
+                <motion.button
+                  type="button"
+                  variants={{
+                    open: { opacity: 1, y: 0 },
+                    closed: { opacity: 0, y: 12 },
+                  }}
+                  transition={{ duration: 0.24, ease: "easeOut" }}
+                  className="btn-slide-primary capsule-button mt-5 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold"
+                  onClick={() => handleNavClick("proposal", "/proposal")}
+                >
+                  Request for Proposal
+                </motion.button>
+              </motion.nav>
+            </Container>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
