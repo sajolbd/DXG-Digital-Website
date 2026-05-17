@@ -13,15 +13,7 @@ import {
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
 import Reveal from "components/shared/Reveal";
-
-const services = [
-  "General Sessions",
-  "Breakouts",
-  "Hybrid & Virtual",
-  "Content Capture",
-  "Creative Design",
-  "Meeting Planning Support",
-];
+import { problemServices } from "data/problemServices";
 
 const whyDXG = ["Our Process", "Our Services", "Our Mission", "Our Experience"];
 
@@ -233,13 +225,13 @@ export default function Footer() {
                 </TypingTitle>
 
                 <Reveal kind="list" className="mt-7 space-y-4">
-                  {services.map((item) => (
-                    <li key={item}>
+                  {problemServices.map((service) => (
+                    <li key={service.slug}>
                       <Link
-                        href="/services"
+                        href={`/problems-we-solve/${service.slug}`}
                         className="text-sm text-primary transition hover:text-white sm:text-base"
                       >
-                        {item}
+                        {service.title}
                       </Link>
                     </li>
                   ))}
