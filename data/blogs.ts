@@ -14,7 +14,7 @@ export const blogs: Blog[] = [
     slug: "building-a-reliable-run-of-show",
     title: "Building A Reliable Run Of Show For Complex Event Productions",
     date: "March 26, 2026",
-    image: "/images/planner-insight-blog/blog-feature.png",
+    image: "/images/planner-insight-blog/1.png",
     shortDesc:
       "The lights dim and the audience falls silent as a single spotlight finds the keynote speaker stepping onto the stage.",
     content: [
@@ -31,7 +31,7 @@ export const blogs: Blog[] = [
     slug: "why-production-planning-matters",
     title: "Why Production Planning Matters More Than Ever",
     date: "March 22, 2026",
-    image: "/images/planner-insight-blog/blog-feature.png",
+    image: "/images/planner-insight-blog/2.png",
     shortDesc:
       "Strong production planning creates smoother event execution and a better audience experience.",
     content: [
@@ -46,7 +46,7 @@ export const blogs: Blog[] = [
     slug: "creating-engaging-hybrid-events",
     title: "Creating Engaging Hybrid Event Experiences",
     date: "March 18, 2026",
-    image: "/images/planner-insight-blog/blog-feature.png",
+    image: "/images/planner-insight-blog/3.png",
     shortDesc:
       "Hybrid events require the perfect balance between in-person and virtual engagement.",
     content: [
@@ -60,7 +60,7 @@ export const blogs: Blog[] = [
     slug: "event-technology-trends",
     title: "Event Technology Trends In 2026",
     date: "March 10, 2026",
-    image: "/images/planner-insight-blog/blog-feature.png",
+    image: "/images/planner-insight-blog/4.png",
     shortDesc:
       "Technology continues transforming how audiences interact with live events.",
     content: [

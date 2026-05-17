@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const navItems = [
   { label: "Home", target: "home", path: "/" },
-  { label: "Our Process", target: "our-process", path: "/our-process" },
+  { label: "How We Works", target: "our-process", path: "/our-process" },
   {
     label: "Problems We Solve",
     target: "problems-we-solve",

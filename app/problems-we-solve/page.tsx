@@ -9,7 +9,7 @@ const page = () => {
   return (
     <div>
       <PageBanner
-        title="Problems We Solve"
+        title="The Problem Most Planners Face +"
         backgroundImage="/images/banners/problems-we-solve-banner.png"
       />
       <ServicesGridSection />

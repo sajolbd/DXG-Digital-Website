@@ -36,8 +36,8 @@ const highlights = [
 const cards = [
   {
     Icon: ClipboardList,
-    title: "Our Process",
-    desc: "From kickoff to closeout, our process keeps everyone aligned. You always know where things stand, what’s coming next, and who owns it.",
+    title: "How We Works",
+    desc: "From kickoff to closeout, How We Works keeps everyone aligned. You always know where things stand, what’s coming next, and who owns it.",
     image: "/images/home/why-dxg/process.png",
   },
   {

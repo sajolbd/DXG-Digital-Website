@@ -15,7 +15,12 @@ import TypingTitle from "components/layout/TypingTitle";
 import Reveal from "components/shared/Reveal";
 import { problemServices } from "data/problemServices";
 
-const whyDXG = ["Our Process", "Our Services", "Our Mission", "Our Experience"];
+const whyDXG = [
+  "How We Works",
+  "Our Services",
+  "Our Mission",
+  "Our Experience",
+];
 
 const legal = ["Privacy Policy", "Terms Of Use"];
 
