@@ -14,36 +14,41 @@ import Reveal from "components/shared/Reveal";
 const videos = [
   {
     id: 1,
-    thumbnail: "/images/our-process/who-we-are/img1.png",
     youtube: "https://www.youtube.com/watch?v=7BEx50pspDA",
   },
   {
     id: 2,
-    thumbnail: "/images/our-process/who-we-are/img2.png",
     youtube: "https://www.youtube.com/watch?v=zSC4VXg2qKk",
   },
   {
     id: 3,
-    thumbnail: "/images/our-process/who-we-are/img1.png",
     youtube: "https://www.youtube.com/watch?v=cs9WrMJwnOA",
   },
   {
     id: 4,
-    thumbnail: "/images/our-process/who-we-are/img2.png",
     youtube: "https://www.youtube.com/watch?v=Dq-6_WjdFWA",
   },
 ];
 
-function getYoutubeEmbedUrl(url: string) {
+function getYoutubeVideoId(url: string) {
   const videoUrl = new URL(url);
-  const videoId =
-    videoUrl.hostname === "youtu.be"
-      ? videoUrl.pathname.slice(1)
-      : videoUrl.searchParams.get("v");
+  return videoUrl.hostname === "youtu.be"
+    ? videoUrl.pathname.slice(1)
+    : videoUrl.searchParams.get("v");
+}
 
+function getYoutubeEmbedUrl(url: string) {
+  const videoId = getYoutubeVideoId(url);
   return videoId
     ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`
     : url;
+}
+
+function getYoutubeThumbnailUrl(url: string) {
+  const videoId = getYoutubeVideoId(url);
+  return videoId
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    : "";
 }
 
 export default function WhoWeAreSection() {
@@ -189,7 +194,7 @@ export default function WhoWeAreSection() {
                   {/* Thumbnail */}
                   <Reveal kind="image" className="absolute inset-0">
                     <Image
-                      src={video.thumbnail}
+                      src={getYoutubeThumbnailUrl(video.youtube)}
                       alt={`DXG video ${video.id}`}
                       fill
                       sizes="(min-width: 1024px) 520px, (min-width: 640px) 420px, 82vw"
