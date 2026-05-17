@@ -126,7 +126,7 @@ export default function Header() {
           <div className="hidden xl:block">
             <button
               type="button"
-              onClick={() => handleNavClick("proposal", "/proposal")}
+              onClick={() => handleNavClick("contact", "/contact")}
               className="btn-slide-primary capsule-button inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
             >
               Request for Proposal
@@ -227,7 +227,7 @@ export default function Header() {
                   }}
                   transition={{ duration: 0.24, ease: "easeOut" }}
                   className="btn-slide-primary capsule-button mt-5 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold"
-                  onClick={() => handleNavClick("proposal", "/proposal")}
+                  onClick={() => handleNavClick("contact", "/contact")}
                 >
                   Request for Proposal
                 </motion.button>
