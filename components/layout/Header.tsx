@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Container from "components/shared/Container";
@@ -22,26 +22,39 @@ const navItems = [
     path: "/experiences-created",
   },
   { label: "The DXG Difference", target: "difference", path: "/difference" },
-  { label: "Planner Insight Blog", target: "blog", path: "/planner-insight-blog" },
+  { label: "Planner Insight Blog", target: "blog", path: "/blog" },
   { label: "Contact Us", target: "contact", path: "/contact" },
 ];
 
 export default function Header() {
   const router = useRouter();
-  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTarget, setActiveTarget] = useState("home");
   const [hoveredTarget, setHoveredTarget] = useState<string | null>(null);
 
-  useEffect(() => {
-    const currentItem = navItems.find((item) => item.path === pathname);
-    setActiveTarget(currentItem?.target ?? "home");
-  }, [pathname]);
-
   const handleNavClick = (target: string, path: string) => {
     setActiveTarget(target);
     setMobileMenuOpen(false);
-    router.push(path);
+
+    if (target === "home") {
+      router.push("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const section = document.getElementById(target);
+
+    if (!section) {
+      router.push(path);
+      return;
+    }
+
+    window.history.pushState(null, "", path);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   const currentDesktopUnderline = hoveredTarget || activeTarget;
@@ -120,7 +133,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`overflow-hidden border-t border-white/10 bg-black/95 transition-all duration-300 xl:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-black/95 transition-all duration-300 lg:hidden ${
           mobileMenuOpen ? "max-h-[560px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
