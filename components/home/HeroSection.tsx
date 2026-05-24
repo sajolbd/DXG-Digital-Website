@@ -117,12 +117,12 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex min-h-screen items-center py-28">
         <Container>
-          <div>
+          <div className="w-full max-w-full">
             <TypingTitle
               as="h1"
-              className="max-w-none text-4xl font-black uppercase  text-white sm:text-5xl md:text-6xl xl:text-7xl"
+              className="max-w-[1120px] text-3xl font-black uppercase leading-tight text-white sm:text-5xl md:text-6xl xl:text-7xl"
             >
-              <span className="leading-relaxed">
+              <span>
                 Your event is too important to hand off to
               </span>{" "}
               <span className="text-primary">the wrong AV partner.</span>
