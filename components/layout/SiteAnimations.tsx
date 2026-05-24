@@ -16,6 +16,12 @@ function isFillImage(image: HTMLImageElement) {
   return image.style.position === "absolute";
 }
 
+function isHandledByMotion(element: Element) {
+  return Boolean(
+    element.closest(".dxg-motion") || element.classList.contains("dxg-motion")
+  );
+}
+
 export default function SiteAnimations({ rootRef }: SiteAnimationsProps) {
   useEffect(() => {
     const root = rootRef.current;
@@ -32,7 +38,9 @@ export default function SiteAnimations({ rootRef }: SiteAnimationsProps) {
           "article, section .grid > div[class*='rounded'], section .grid > a[class*='rounded']",
           root
         )
-        .filter((card) => !card.closest(".marquee-track"));
+        .filter(
+          (card) => !card.closest(".marquee-track") && !isHandledByMotion(card)
+        );
 
       cards.forEach((card, index) => {
         gsap.from(card, {
@@ -57,7 +65,8 @@ export default function SiteAnimations({ rootRef }: SiteAnimationsProps) {
           (image) =>
             !isFillImage(image) &&
             !image.closest(".marquee-track") &&
-            !image.closest("button")
+            !image.closest("button") &&
+            !isHandledByMotion(image)
         );
 
       images.forEach((image) => {
@@ -106,7 +115,8 @@ export default function SiteAnimations({ rootRef }: SiteAnimationsProps) {
           (block) =>
             !block.closest(".marquee-track") &&
             !block.closest(".typing-title") &&
-            !block.closest("article")
+            !block.closest("article") &&
+            !isHandledByMotion(block)
         );
 
       contentBlocks.forEach((block, index) => {
@@ -131,7 +141,11 @@ export default function SiteAnimations({ rootRef }: SiteAnimationsProps) {
       );
 
       splitBlocks.forEach((block, index) => {
-        if (block.closest(".marquee-track") || block.querySelector("section")) {
+        if (
+          block.closest(".marquee-track") ||
+          block.querySelector("section") ||
+          isHandledByMotion(block)
+        ) {
           return;
         }
 

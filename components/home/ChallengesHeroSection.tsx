@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 export default function ChallengesHeroSection() {
   return (
@@ -21,8 +22,8 @@ export default function ChallengesHeroSection() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/40" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Content */}
       <div className="relative z-10">
@@ -38,10 +39,13 @@ export default function ChallengesHeroSection() {
               <span className="text-primary">DXG Solves Them</span>
             </TypingTitle>
 
-            <p className="mt-8 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
+            <Reveal
+              as="p"
+              className="mt-8 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8"
+            >
               We partner with planners to deliver seamless, engaging events—so
               you can focus on your attendees, not the technology.
-            </p>
+            </Reveal>
           </div>
         </Container>
       </div>

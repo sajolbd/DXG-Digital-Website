@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "components/shared/Container";
 import { ChevronRight } from "lucide-react";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const services = [
   {
@@ -59,10 +60,13 @@ export default function OnePartnerMarqueeSection() {
           <div className="h-px flex-1 bg-primary/40" />
         </div>
 
-        <p className="mt-5 max-w-3xl text-left text-sm leading-7 text-white/75 sm:mx-auto sm:text-center sm:text-base">
+        <Reveal
+          as="p"
+          className="mt-5 max-w-3xl text-left text-sm leading-7 text-white/75 sm:mx-auto sm:text-center sm:text-base"
+        >
           From the first planning call through post-event wrap-up, DXG supports
           every element of your event — so nothing falls through the cracks.
-        </p>
+        </Reveal>
       </Container>
 
       {/* Marquee */}

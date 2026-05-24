@@ -2,6 +2,7 @@ import Container from "components/shared/Container";
 import { Users, ClipboardList, ClipboardCheck, Globe } from "lucide-react";
 import Image from "next/image";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const features = [
   {
@@ -41,24 +42,34 @@ export default function CompanyOverviewSection() {
               Company <span className="text-primary">Overview</span>
             </TypingTitle>
 
-            <p className="mt-6 max-w-md text-base italic leading-7 text-white/70 sm:text-lg">
+            <Reveal
+              as="p"
+              className="mt-6 max-w-md text-base italic leading-7 text-white/70 sm:text-lg"
+            >
               Most planners don’t realize how much better their AV experience
               could be — until they work with the right partner.
-            </p>
+            </Reveal>
           </div>
 
           {/* Right */}
           <div className="max-w-xl lg:ml-auto">
-            <p className="text-base leading-7 text-white/80 sm:text-lg">
+            <Reveal
+              as="p"
+              className="text-base leading-7 text-white/80 sm:text-lg"
+            >
               Digital Xperience Group (DXG) is an audiovisual production agency
               for planners who want a better AV experience — more control, more
               clarity, and more confidence.
-            </p>
+            </Reveal>
 
-            <p className="mt-5 text-base leading-7 text-white/70 sm:text-lg">
+            <Reveal
+              as="p"
+              className="mt-5 text-base leading-7 text-white/70 sm:text-lg"
+              delay={0.06}
+            >
               We support planners from initial strategy through execution,
               ensuring every detail aligns with your goals — and your audience.
-            </p>
+            </Reveal>
           </div>
         </div>
 
@@ -70,16 +81,19 @@ export default function CompanyOverviewSection() {
             return (
               <div
                 key={i}
-                className="group rounded-2xl bg-[#081624] p-6 text-center transition duration-300 hover:translate-y-[-6px] hover:shadow-xl hover:shadow-black/40"
+                className="overview-box group rounded-2xl bg-[#081624] p-6 text-center transition duration-300 hover:translate-y-[-6px] hover:shadow-xl hover:shadow-black/40"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl  text-primary">
+                <Reveal
+                  kind="image"
+                  className="icon-hover mx-auto flex h-14 w-14 items-center justify-center rounded-xl text-primary"
+                >
                   <Image
                     src={item.icon}
                     alt={item.title}
                     width={64}
                     height={64}
                   />
-                </div>
+                </Reveal>
 
                 <TypingTitle
                   as="h3"
@@ -88,9 +102,12 @@ export default function CompanyOverviewSection() {
                   {item.title}
                 </TypingTitle>
 
-                <p className="mt-3 text-sm leading-6 text-white/70">
+                <Reveal
+                  as="p"
+                  className="mt-3 text-sm leading-6 text-white/70"
+                >
                   {item.desc}
-                </p>
+                </Reveal>
               </div>
             );
           })}

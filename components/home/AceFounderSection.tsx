@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin } from "lucide-react";
+import { FaLinkedinIn } from "react-icons/fa";
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 export default function AceFounderSection() {
   return (
@@ -39,27 +40,28 @@ export default function AceFounderSection() {
             {/* Right */}
             <div className="max-w-4xl lg:ml-auto lg:pt-12">
               <div className="space-y-5 text-sm leading-6 text-white sm:text-base sm:leading-7">
-                <p>
+                <Reveal as="p">
                   When you&apos;re planning an event, you&apos;re not just
                   managing logistics — you&apos;re protecting your reputation.
                   At DXG, we take that responsibility seriously. Every
                   production we touch is backed by decades of expertise, a team
                   that operates with flawless precision, and a standard of
-                  excellence that doesn&apos;t waver when things get complicated.
-                </p>
+                  excellence that doesn&apos;t waver when things get
+                  complicated.
+                </Reveal>
 
-                <p>
+                <Reveal as="p" delay={0.06}>
                   Wallace &quot;Ace&quot; Johnson, CTS, founded Digital
-                  Xperience Group on a simple belief: meeting planners deserve
-                  a production partner they never have to worry about. With 25+
+                  Xperience Group on a simple belief: meeting planners deserve a
+                  production partner they never have to worry about. With 25+
                   years in live-event AV production, Ace has built his expertise
                   from both sides of the table. His background spans hotel AV
                   operations and independent production — giving him a rare,
                   insider understanding of how venues think, how contracts work,
                   and exactly where planners can get caught off guard.
-                </p>
+                </Reveal>
 
-                <p>
+                <Reveal as="p" delay={0.12}>
                   That knowledge works directly in your favor. His executive
                   leadership roles across the industry&apos;s top companies, his
                   CTS certification, and his tenure on the AVIXA Board of
@@ -68,25 +70,27 @@ export default function AceFounderSection() {
                   industry. What his clients say most isn&apos;t about the
                   technology or the logistics. It&apos;s about how they feel on
                   event day. Confident. Covered. Calm. That&apos;s what Ace
-                  brings to every event — and that&apos;s what DXG promises every
-                  planner who trusts us with their stage.
-                </p>
+                  brings to every event — and that&apos;s what DXG promises
+                  every planner who trusts us with their stage.
+                </Reveal>
 
-                <p className="pt-2">
+                <Reveal as="p" className="pt-2" delay={0.18}>
                   Want to stay connected and follow what DXG is working on?
                   <br />
                   Connect with Ace on LinkedIn
-                </p>
+                </Reveal>
 
                 <div className="pt-1">
                   <Link
-                    href="https://www.linkedin.com/in/acedxg/"
+                    href="https://www.linkedin.com/company/dxg-agency/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-slide-primary inline-flex min-w-[170px] items-center justify-center gap-2 px-8 py-3 text-xs font-semibold"
+                    className="btn-slide-primary group inline-flex min-h-11 min-w-[178px] items-center justify-center gap-2.5 px-8 py-3 text-xs font-bold leading-none"
                   >
-                    <Linkedin size={13} strokeWidth={2.5} />
-                    Ace Johnson
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                      <FaLinkedinIn className="h-3 w-3" aria-hidden="true" />
+                    </span>
+                    <span className="translate-y-px">Ace Johnson</span>
                   </Link>
                 </div>
               </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "components/shared/Container";
 import { CheckCircle2 } from "lucide-react";
 import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
 
 const points = [
   "Runs multi-day conferences where every detail works seamlessly — from general sessions to breakouts",
@@ -39,14 +40,17 @@ export default function SmarterApproachSection() {
                 Designed For Planners Who Expect More From Event Production
               </TypingTitle>
 
-              <p className="mt-6 text-sm leading-7 text-white/80 sm:text-base sm:leading-8">
+              <Reveal
+                as="p"
+                className="mt-6 text-sm leading-7 text-white/80 sm:text-base sm:leading-8"
+              >
                 DXG is built for planners who want more control, more support,
                 and a better production experience — especially when the stakes
                 are high. If that sounds like your world, DXG was built for you.
                 We&apos;re the production partner who:
-              </p>
+              </Reveal>
 
-              <ul className="mt-8 space-y-5">
+              <Reveal kind="list" className="mt-8 space-y-5">
                 {points.map((point, index) => (
                   <li
                     key={index}
@@ -59,18 +63,21 @@ export default function SmarterApproachSection() {
                     <span>{point}</span>
                   </li>
                 ))}
-              </ul>
+              </Reveal>
             </div>
 
             {/* Right Image */}
-            <div className="relative min-h-[320px] lg:min-h-full">
+            <Reveal
+              kind="image"
+              className="relative min-h-[320px] lg:min-h-full"
+            >
               <Image
                 src="/images/home/smarter-approach/smarter-approach.png"
                 alt="Event AV Production"
                 fill
                 className="object-cover"
               />
-            </div>
+            </Reveal>
           </div>
         </div>
       </Container>

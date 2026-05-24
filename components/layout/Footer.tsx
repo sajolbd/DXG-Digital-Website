@@ -7,32 +7,51 @@ import {
   Mail,
   MapPin,
   Phone,
-  Twitter,
+  X,
   type LucideIcon,
 } from "lucide-react";
 import Container from "components/shared/Container";
+import TypingTitle from "components/layout/TypingTitle";
+import Reveal from "components/shared/Reveal";
+import { problemServices } from "data/problemServices";
 
-const services = [
-  "General Sessions",
-  "Breakouts",
-  "Hybrid & Virtual",
-  "Content Capture",
-  "Creative Design",
-  "Meeting Planning Support",
-];
-
-const whyDXG = ["Our Process", "Our Services", "Our Mission", "Our Experience"];
+const whyDXG = ["Our Services", "Our Mission", "Our Experience"];
 
 const legal = ["Privacy Policy", "Terms Of Use"];
 
-const addressItems: { label: string; Icon: LucideIcon }[] = [
+const addressItems: {
+  label: string;
+  Icon: LucideIcon;
+  href?: string;
+  external?: boolean;
+}[] = [
   { label: "12824 Dupont Circle Tampa, FL 33626", Icon: MapPin },
-  { label: "855.282.9394", Icon: Phone },
-  { label: "Info@dxg.agency", Icon: Mail },
-  { label: "Facebook", Icon: Facebook },
-  { label: "Linked In", Icon: Linkedin },
-  { label: "Instagram", Icon: Instagram },
-  { label: "Twitter", Icon: Twitter },
+  { label: "855.282.9394", Icon: Phone, href: "tel:+18552829394" },
+  { label: "Info@dxg.agency", Icon: Mail, href: "mailto:info@dxg.agency" },
+  {
+    label: "Instagram",
+    Icon: Instagram,
+    href: "https://www.instagram.com/dxg.agency",
+    external: true,
+  },
+  {
+    label: "X",
+    Icon: X,
+    href: "https://x.com/dxgagency",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    Icon: Linkedin,
+    href: "https://www.linkedin.com/company/dxg-agency",
+    external: true,
+  },
+  {
+    label: "Facebook",
+    Icon: Facebook,
+    href: "https://www.facebook.com/dxgagcy/",
+    external: true,
+  },
 ];
 
 const footerPanelClass =
@@ -58,20 +77,26 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       {/* Top */}
-      <div className="border-b border-white/10 py-16 lg:py-20">
+      <div className="border-b border-white/10 py-8 sm:py-12 lg:py-20">
         <Container>
           {/* Newsletter */}
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             {/* Left */}
             <div className="max-w-2xl">
-              <h2 className="text-4xl font-black text-white sm:text-5xl">
+              <TypingTitle
+                as="h2"
+                className="text-4xl font-black text-white sm:text-5xl"
+              >
                 Join Our Newsletter
-              </h2>
+              </TypingTitle>
 
-              <p className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-lg">
+              <Reveal
+                as="p"
+                className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-lg"
+              >
                 Practical insights for meeting planners — tips, trends, and
                 strategies you can actually use
-              </p>
+              </Reveal>
             </div>
 
             {/* Right */}
@@ -143,22 +168,46 @@ export default function Footer() {
                   />
                 </Link>
 
-                <h3 className="mt-8 text-3xl font-black uppercase text-white">
+                <TypingTitle
+                  as="h3"
+                  className="mt-8 text-3xl font-black uppercase text-white"
+                >
                   Address
-                </h3>
+                </TypingTitle>
 
-                <ul className="mt-7 space-y-4 text-sm text-white/75 sm:text-base">
-                  {addressItems.map(({ label, Icon }) => (
+                <Reveal
+                  kind="list"
+                  className="mt-7 space-y-4 text-sm text-white/75 sm:text-base"
+                >
+                  {addressItems.map(({ label, Icon, href, external }) => (
                     <li key={label} className="flex items-start gap-3">
-                      <Icon
-                        size={18}
-                        strokeWidth={2}
-                        className="mt-0.5 shrink-0 text-primary"
-                      />
-                      <span>{label}</span>
+                      {href ? (
+                        <a
+                          href={href}
+                          target={external ? "_blank" : undefined}
+                          rel={external ? "noopener noreferrer" : undefined}
+                          className="flex items-start gap-3 transition hover:text-primary"
+                        >
+                          <Icon
+                            size={18}
+                            strokeWidth={2}
+                            className="mt-0.5 shrink-0 text-primary"
+                          />
+                          <span>{label}</span>
+                        </a>
+                      ) : (
+                        <>
+                          <Icon
+                            size={18}
+                            strokeWidth={2}
+                            className="mt-0.5 shrink-0 text-primary"
+                          />
+                          <span>{label}</span>
+                        </>
+                      )}
                     </li>
                   ))}
-                </ul>
+                </Reveal>
               </div>
             </div>
 
@@ -168,22 +217,25 @@ export default function Footer() {
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
               <div className="relative z-10 lg:pl-12">
-                <h3 className="text-3xl font-black uppercase text-white">
+                <TypingTitle
+                  as="h3"
+                  className="text-3xl font-black uppercase text-white"
+                >
                   Services
-                </h3>
+                </TypingTitle>
 
-                <ul className="mt-7 space-y-4">
-                  {services.map((item) => (
-                    <li key={item}>
+                <Reveal kind="list" className="mt-7 space-y-4">
+                  {problemServices.map((service) => (
+                    <li key={service.slug}>
                       <Link
-                        href="/services"
+                        href={`/problems-we-solve/${service.slug}`}
                         className="text-sm text-primary transition hover:text-white sm:text-base"
                       >
-                        {item}
+                        {service.title}
                       </Link>
                     </li>
                   ))}
-                </ul>
+                </Reveal>
               </div>
             </div>
 
@@ -193,11 +245,14 @@ export default function Footer() {
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
               <div className="relative z-10 lg:pl-12">
-                <h3 className="text-3xl font-black uppercase text-white">
+                <TypingTitle
+                  as="h3"
+                  className="text-3xl font-black uppercase text-white"
+                >
                   Why DXG
-                </h3>
+                </TypingTitle>
 
-                <ul className="mt-7 space-y-4">
+                <Reveal kind="list" className="mt-7 space-y-4">
                   {whyDXG.map((item) => (
                     <li key={item}>
                       <Link
@@ -208,7 +263,7 @@ export default function Footer() {
                       </Link>
                     </li>
                   ))}
-                </ul>
+                </Reveal>
               </div>
             </div>
 
@@ -218,11 +273,14 @@ export default function Footer() {
               <div className="absolute left-0 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
               <div className="relative z-10 lg:pl-12">
-                <h3 className="text-3xl font-black uppercase text-white">
+                <TypingTitle
+                  as="h3"
+                  className="text-3xl font-black uppercase text-white"
+                >
                   Legal
-                </h3>
+                </TypingTitle>
 
-                <ul className="mt-7 space-y-4">
+                <Reveal kind="list" className="mt-7 space-y-4">
                   {legal.map((item) => (
                     <li key={item}>
                       <Link
@@ -233,22 +291,22 @@ export default function Footer() {
                       </Link>
                     </li>
                   ))}
-                </ul>
+                </Reveal>
               </div>
             </div>
           </div>
 
           {/* Bottom */}
           <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-center text-sm text-white/60 lg:flex-row lg:items-center lg:justify-between lg:text-left">
-            <p>
+            <Reveal as="p">
               2026{" "}
               <span className="text-primary">
                 Digital Xperience Group (DXG)
               </span>{" "}
               © All Rights Reserved
-            </p>
+            </Reveal>
 
-            <p>
+            <Reveal as="p" delay={0.06}>
               Design & Development{" "}
               <Link
                 href="https://bayshorecommunication.com"
@@ -257,7 +315,7 @@ export default function Footer() {
               >
                 Bayshore Communication
               </Link>
-            </p>
+            </Reveal>
           </div>
         </Container>
       </div>

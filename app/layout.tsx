@@ -22,18 +22,18 @@ const ogImageUrl = `${siteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "DXG Digital",
-  description: "DXG Digital Website",
+  title: "Digital Xperience Group",
+  description: "Digital Xperience Group Website",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "DXG Digital",
-    description: "DXG Digital Website",
+    title: "Digital Xperience Group",
+    description: "Digital Xperience Group Website",
     url: siteUrl,
-    siteName: "DXG Digital",
+    siteName: "Digital Xperience Group",
     locale: "en_US",
     type: "website",
     images: [

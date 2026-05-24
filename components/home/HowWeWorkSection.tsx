@@ -3,6 +3,7 @@
 import Container from "components/shared/Container";
 import TypingTitle from "components/layout/TypingTitle";
 import ProcessTimelineAnimation from "components/home/ProcessTimelineAnimation";
+import Reveal from "components/shared/Reveal";
 
 const methodology = [
   {
@@ -55,9 +56,12 @@ export default function HowWeWorkSection() {
 
             {/* Right Panel */}
             <div className="bg-[#181818] p-6 sm:p-8 sm:ml-4 lg:ml-0 lg:p-12">
-              <p className="text-xs font-bold uppercase tracking-wide text-white/70">
+              <Reveal
+                as="p"
+                className="text-xs font-bold uppercase tracking-wide text-white/70"
+              >
                 DXG Successful Process™ Methodology
-              </p>
+              </Reveal>
 
               <TypingTitle
                 as="h3"
@@ -75,9 +79,12 @@ export default function HowWeWorkSection() {
                     <TypingTitle as="h4" className="text-xl font-bold text-white">
                       {item.title}
                     </TypingTitle>
-                    <p className="mt-3 text-sm leading-7 text-white/75">
+                    <Reveal
+                      as="p"
+                      className="mt-3 text-sm leading-7 text-white/75"
+                    >
                       {item.desc}
-                    </p>
+                    </Reveal>
                   </div>
                 ))}
               </div>
