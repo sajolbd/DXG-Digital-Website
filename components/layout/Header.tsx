@@ -16,7 +16,6 @@ const headerFont = Sora({
 
 const navItems = [
   { label: "Home", target: "home", path: "/" },
-  { label: "How We Works", target: "our-process", path: "/our-process" },
   {
     label: "Problems We Solve",
     target: "problems-we-solve",

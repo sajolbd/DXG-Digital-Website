@@ -15,7 +15,12 @@ import TypingTitle from "components/layout/TypingTitle";
 import Reveal from "components/shared/Reveal";
 import { problemServices } from "data/problemServices";
 
-const whyDXG = ["Our Services", "Our Mission", "Our Experience"];
+const whyDXG = [
+  { label: "How We Works", href: "/our-process" },
+  { label: "Our Services", href: "/" },
+  { label: "Our Mission", href: "/" },
+  { label: "Our Experience", href: "/" },
+];
 
 const legal = ["Privacy Policy", "Terms Of Use"];
 
@@ -254,12 +259,12 @@ export default function Footer() {
 
                 <Reveal kind="list" className="mt-7 space-y-4">
                   {whyDXG.map((item) => (
-                    <li key={item}>
+                    <li key={item.label}>
                       <Link
-                        href="/"
+                        href={item.href}
                         className="text-sm text-white/70 transition hover:text-primary sm:text-base"
                       >
-                        {item}
+                        {item.label}
                       </Link>
                     </li>
                   ))}
