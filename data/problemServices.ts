@@ -10,6 +10,9 @@ export type ProblemService = {
 
 const serviceDetailsPath = "/images/problems-we-solve/service-details";
 
+/*
+Previous problemServices content kept for reference:
+
 export const problemServices: ProblemService[] = [
   {
     slug: "production-management",
@@ -87,6 +90,92 @@ export const problemServices: ProblemService[] = [
       "Capturing the essence and energy of your event is an art, and at DXG, our Photography and Videography services excel in this art. We understand that each event is a unique story waiting to be told, and our professional photographers and videographers are masters at narrating these stories through stunning visuals. With a keen eye for detail and a passion for perfection, we document your event as it happens and the emotions and moments that define it.",
 
       " From candid shots that capture the spirit of the occasion to high-definition videos that bring the event's narrative to life, our visual storytelling ensures that the memories of your event endure long after the final curtain. Our approach is unobtrusive yet comprehensive, ensuring that we capture the essence of your event from every angle without disrupting the experience. With our photography and videography, your event is not just an occasion but a timeless story beautifully preserved.",
+    ],
+  },
+];
+*/
+
+export const problemServices: ProblemService[] = [
+  {
+    slug: "general-session",
+    icon: "/images/problems-we-solve/production-management.png",
+    title: "General Session",
+    desc: "Main-stage production with clean audio, confident camera direction, presenter support, and a producer keeping the show moving.",
+    heroImage: `${serviceDetailsPath}/production-management.png`,
+    bannerImage: "/images/banners/problems-we-solve-banner.png",
+    details: [
+      "The general session is the moment everything you've planned becomes visible. When the room goes dark and your opening video rolls, there's no second take.",
+
+      "Our team produces general sessions with the calm precision that comes from having done this thousands of times: clean audio, confident camera direction, presenters who feel supported the moment they step on stage, and a producer in your ear who anticipates what's next before you have to ask. You'll feel the difference in the room.",
+    ],
+  },
+  {
+    slug: "breakouts",
+    icon: "/images/problems-we-solve/audiovisual-technology.png",
+    title: "Breakouts",
+    desc: "Parallel room support with the same technical standards, pre-show checks, and calm crew presence as your main stage.",
+    heroImage: `${serviceDetailsPath}/audiovisual-technology.png`,
+    bannerImage: "/images/banners/problems-we-solve-banner.png",
+    details: [
+      "Experienced planners know breakouts often carry more weight than the general session. They're where attendees connect with content that's directly relevant to their work, and where the program either delivers on its promise or falls flat.",
+
+      "Ten rooms running in parallel means ten chances for a dead mic, a missing HDMI, or a presenter who walks in five minutes before go-time with a deck that won't load.",
+
+      "We bring the same attention to detail to every breakout that we bring to the main stage: same technical standards, same pre-show checks, same calm presence in the room. You shouldn't have to be in ten places at once, and with us, you don't.",
+    ],
+  },
+  {
+    slug: "hybrid-virtual",
+    icon: "/images/problems-we-solve/event-platform-services.png",
+    title: "Hybrid & Virtual",
+    desc: "Connected room-and-screen production that keeps remote and in-person audiences engaged in the same event.",
+    heroImage: `${serviceDetailsPath}/event-platform-services.png`,
+    bannerImage: "/images/banners/problems-we-solve-banner.png",
+    details: [
+      "A hybrid event isn't an in-person event with a camera in the back of the room. The remote audience either feels included, or they drop off, and the in-room energy either translates to the stream or it doesn't.",
+
+      "We build hybrid and virtual experiences as two connected productions: one for the room, one for the screen. With the technical infrastructure, on-camera direction, and platform expertise to support both audiences, your remote attendees get more than a livestream and your in-room attendees still get your full attention.",
+    ],
+  },
+  {
+    slug: "content-capture",
+    icon: "/images/problems-we-solve/photography-videography.png",
+    title: "Content Capture",
+    desc: "Photo and video capture planned around recap reels, speaker cuts, sponsor deliverables, and stakeholder proof points.",
+    heroImage: `${serviceDetailsPath}/photography-videography.png`,
+    bannerImage: "/images/banners/problems-we-solve-banner.png",
+    details: [
+      "The event ends and the content begins its second life. Recap videos, speaker reels, social cutdowns, sponsor deliverables - the footage you capture on-site determines what you can actually do with it later.",
+
+      "Our photo and video team shoots with the edit in mind from the first frame, working from a shot list built around how you'll use the content, not just what happened that day. You leave the event with assets your marketing team can actually use and the proof points your stakeholders want to see.",
+    ],
+  },
+  {
+    slug: "creative-design",
+    icon: "/images/problems-we-solve/graphics-animation.png",
+    title: "Creative Design",
+    desc: "Stage design, motion graphics, environmental branding, and templates that make the whole event feel intentional.",
+    heroImage: `${serviceDetailsPath}/graphics-animation.png`,
+    bannerImage: "/images/banners/problems-we-solve-banner.png",
+    details: [
+      "Strong production needs a strong creative idea behind it, or it ends up looking like a stage with some lights on it.",
+
+      "We help shape the visual language of your event: stage design, motion graphics, environmental branding, and content templates, so every screen, surface, and transition feels like it belongs to the same story.",
+
+      "Whether you're bringing a fully built creative brief or starting from a theme on a napkin, we meet you where you are and build from there. Your event should look like it was designed, not assembled.",
+    ],
+  },
+  {
+    slug: "meeting-planning-support",
+    icon: "/images/problems-we-solve/event-experience-design.png",
+    title: "Meeting Planning Support",
+    desc: "Flexible planning help, technical advising, and production logistics support when your team needs extra bandwidth.",
+    heroImage: `${serviceDetailsPath}/event-experience-design.png`,
+    bannerImage: "/images/banners/problems-we-solve-banner.png",
+    details: [
+      "Sometimes the gap between a great plan and a great event is bandwidth. Whether you need a second set of hands on production logistics, a technical advisor in your planning meetings, or a partner who can quietly take work off your plate in the final two weeks, we're built to flex with you.",
+
+      "We've sat in your seat enough times to know which decisions matter, which ones can wait, and which ones need a backup plan. You don't have to carry it all yourself.",
     ],
   },
 ];
