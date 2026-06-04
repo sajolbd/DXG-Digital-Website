@@ -72,7 +72,7 @@ export default function ServiceDetailsPage({
                 fill
                 priority
                 sizes="50vw"
-                className="object-cover"
+                className="object-cover object-left"
               />
               <div className="absolute inset-0 bg-black/10" />
               <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black via-black/50 to-transparent" />
@@ -120,7 +120,7 @@ export default function ServiceDetailsPage({
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover"
+                className="object-cover object-left"
               />
               <div className="absolute inset-0 bg-black/15" />
               <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black to-transparent sm:h-24" />
